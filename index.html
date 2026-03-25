@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Levan Kaipajyan – Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="scroll-line" id="scrollLine"></div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">LK<span>.</span></div>
+    <div class="nav-links" id="navLinks">
+      <button data-nav="hero" class="active" onclick="showPage('hero',this)" data-fr="Accueil" data-en="Home">Accueil</button>
+      <button data-nav="about" onclick="showPage('about',this)" data-fr="À Propos" data-en="About">À Propos</button>
+      <button data-nav="skills" onclick="showPage('skills',this)" data-fr="Compétences" data-en="Skills">Compétences</button>
+      <button data-nav="experience" onclick="showPage('experience',this)" data-fr="Parcours" data-en="Experience">Parcours</button>
+      <button data-nav="projects" onclick="showPage('projects',this)" data-fr="Projets" data-en="Projects">Projets</button>
+      <button data-nav="contact" onclick="showPage('contact',this)" data-fr="Contact" data-en="Contact">Contact</button>
+    </div>
+    <div class="nav-right">
+      <div class="lang-switcher">
+        <button class="lang-btn active" onclick="setLang('fr')">🇫🇷 FR</button>
+        <button class="lang-btn" onclick="setLang('en')">🇬🇧 EN</button>
+      </div>
+      <button class="menu-btn" onclick="toggleMobileMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+
+<div class="mobile-nav" id="mobileNav">
+  <button data-nav="hero" class="active" onclick="showPage('hero',this);closeMobile()" data-fr="Accueil" data-en="Home">Accueil</button>
+  <button data-nav="about" onclick="showPage('about',this);closeMobile()" data-fr="À Propos" data-en="About">À Propos</button>
+  <button data-nav="skills" onclick="showPage('skills',this);closeMobile()" data-fr="Compétences" data-en="Skills">Compétences</button>
+  <button data-nav="experience" onclick="showPage('experience',this);closeMobile()" data-fr="Parcours" data-en="Experience">Parcours</button>
+  <button data-nav="projects" onclick="showPage('projects',this);closeMobile()" data-fr="Projets" data-en="Projects">Projets</button>
+  <button data-nav="contact" onclick="showPage('contact',this);closeMobile()" data-fr="Contact" data-en="Contact">Contact</button>
+</div>
+
+<main>
+
+<!-- ══ PAGE ACCUEIL ══ -->
+<div class="page active" id="page-hero">
+<section id="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <div class="wrapper">
+    <div class="hero-inner">
+      <div>
+        <p class="hero-label" data-fr="Disponible pour alternance" data-en="Available for apprenticeship">Disponible pour alternance</p>
+        <h1 class="hero-name">Levan<br><span class="line2">Kaipajyan</span></h1>
+        <p class="hero-role">
+          <strong data-fr="Diplômé BUT Informatique" data-en="Computer Science Graduate (BUT)">Diplômé BUT Informatique</strong><br>
+          <span data-fr="En Master Cybersécurité & Réseaux" data-en="MSc Cybersecurity & Networks">En Master Cybersécurité & Réseaux</span>
+        </p>
+        <p class="hero-desc" data-fr="À la recherche d'une alternance en cybersécurité dès septembre 2026." data-en="Looking for a cybersecurity apprenticeship starting September 2026.">
+            À la recherche d'une alternance en cybersécurité dès septembre 2026.
+        </p>
+        <div class="hero-btns">
+          <button class="btn-primary" onclick="showPage('experience', document.querySelector('[data-nav=experience]'))" data-fr="Voir mon parcours" data-en="See my background">Voir mon parcours</button>
+          <button class="btn-ghost" onclick="showPage('contact', document.querySelector('[data-nav=contact]'))" data-fr="Me contacter" data-en="Contact me">Me contacter</button>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="avatar-area">
+          <img src="assets/images/Levan_Chemise.png" alt="Levan Kaipajyan" class="avatar">
+          <div class="avatar-info">
+            <h3>Levan Kaipajyan</h3>
+            <p data-fr="Cybersécurité & Réseaux" data-en="Cybersecurity & Networks">Cybersécurité & Réseaux</p>
+          </div>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-value">🎂</div>
+            <div class="stat-label" data-fr="21 ans" data-en="21 years old">21 ans</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">📍</div>
+            <div class="stat-label" data-fr="Beauvais, 60000" data-en="Beauvais, 60000">Beauvais, 60000</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">🚗</div>
+            <div class="stat-label" data-fr="Permis B – Véhiculé" data-en="Driving licence – Own vehicle">Permis B – Véhiculé</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">📞</div>
+            <div class="stat-label" data-fr="07 49 70 30 71" data-en="07 49 70 30 71">07 49 70 30 71</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">✉️</div>
+            <div class="stat-label" data-fr="kaipajyanlevan@gmail.com" data-en="kaipajyanlevan@gmail.com">kaipajyanlevan@gmail.com</div>
+          </div>
+          <a class="stat-item stat-item-link" href="https://www.linkedin.com/in/levan-kaipajyan-115291309/" target="_blank">
+            <div class="stat-value">in</div>
+            <div class="stat-label" data-fr="LinkedIn" data-en="LinkedIn">LinkedIn</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+
+<!-- ══ PAGE À PROPOS ══ -->
+<div class="page" id="page-about">
+<section>
+  <div class="wrapper">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2 class="section-title" data-fr="À Propos" data-en="About Me">À Propos</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p data-fr="Je suis <strong> Levan Kaipajyan </strong>, 21 ans, diplômé d'un <strong>BUT Informatique – Parcours Réseaux </strong> à l'IUT d'Amiens. Actuellement en recherche d'un <strong>master en Cybersécurité & Réseaux en alternance</strong>, me permettant de mettre en pratique mes compétences tout en m'investissant dans des projets concrets au sein d'une équipe professionnelle." data-en="I am <strong>Levan Kaipajyan</strong>, 21 years old, holding a <strong>Computer Science degree (BUT) – Networks track</strong> from IUT Amiens. Currently seeking a <strong>Master's in Cybersecurity & Networks through an apprenticeship</strong>, allowing me to apply my skills while engaging in concrete projects within a professional team.">
+          Je suis <strong> Levan Kaipajyan </strong>, 21 ans, diplômé d'un <strong> BUT Informatique – Parcours Réseaux </strong> à l'IUT d'Amiens. Actuellement en recherche d'un <strong>master en Cybersécurité & Réseaux en alternance</strong>, me permettant de mettre en pratique mes compétences tout en m'investissant dans des projets concrets au sein d'une équipe professionnelle.
+        </p>
+        <p data-fr="Organisé, rigoureux et doté d'un esprit d'équipe, je traite les problématiques techniques de manière structurée et analytique. Passionné par la <strong>cybersécurité, l'administration des systèmes et la sécurisation des infrastructures</strong>, je souhaite aujourd'hui évoluer dans un environnement stimulant où je pourrai renforcer mes compétences et participer à des projets concrets qui me permettront de développer davantage mon savoir-faire et mon professionnalisme." data-en="Organized, rigorous, and possessing strong teamwork skills, I approach technical challenges in a structured and analytical manner. Passionate about <strong>cybersecurity, systems administration, and infrastructure security</strong>, I am seeking to develop within a stimulating environment where I can strengthen my skills and participate in concrete projects that will allow me to further enhance my expertise and professionalism.">
+          Organisé, rigoureux et doté d'un esprit d'équipe, je traite les problématiques techniques de manière structurée et analytique. Passionné par la <strong> cybersécurité, l'administration des systèmes et la sécurisation des infrastructures </strong>, je souhaite aujourd'hui évoluer dans un environnement stimulant où je pourrai renforcer mes compétences et participer à des projets concrets qui me permettront de développer davantage mon savoir-faire et mon professionnalisme.
+        </p>
+        <div style="display: flex; gap: 20px; margin-top: 100px; flex-wrap: wrap;">
+          <a href="assets/documents/CV_Levan_Kaipajyan.pdf" target="_blank" class="btn-primary" data-fr="📥 Curriculum Vitae" data-en="📥 Curriculum Vitae">📥 Curriculum Vitae </a>
+          <a href="assets/documents/Lettre_Motivation_Levan_Kaipajyan.pdf" target="_blank" class="btn-ghost" data-fr="📄 Lettre de motivation" data-en="📄 Motivation Letter">📄 Lettre de motivation</a>
+        </div>
+      </div>
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="info-card-title">📋 <span data-fr="Informations" data-en="Information">Informations</span></div>
+          <div class="info-card-content">
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <div>📍 Beauvais, 60000</div>
+              <div>📞 07 49 70 30 71</div>
+              <div>✉️ kaipajyanlevan@gmail.com</div>
+              <div>🚗 <span data-fr="Permis B – Véhiculé" data-en="Driving licence – Own vehicle">Permis B – Véhiculé</span></div>
+              <div>🎂 21 <span data-fr="ans" data-en="years old">ans</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">🌍 <span data-fr="Langues" data-en="Languages">Langues</span></div>
+          <div class="info-card-content">
+            <div style="display:flex;flex-direction:column;gap:10px;">
+              <div>🇫🇷 Français — <span style="color:var(--accent)" data-fr="Langue maternelle" data-en="Native">Langue maternelle</span></div>
+              <div>🇦🇲 Arménien — <span style="color:var(--accent)" data-fr="Langue maternelle" data-en="Native">Langue maternelle</span></div>
+              <div>🇷🇺 Russe — <span style="color:var(--accent)" data-fr="Langue maternelle" data-en="Native">Langue maternelle</span></div>
+              <div>🇬🇧 Anglais — <span style="color:var(--accent)">B1 – <span data-fr="Intermédiaire" data-en="Intermediate">Intermédiaire</span></span></div>
+            </div>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">🎯 <span data-fr="Centres d'intérêt" data-en="Interests">Centres d'intérêt</span></div>
+          <div class="interests-tags">
+            <span class="tag">🥊 <span data-fr="Boxe (1 an)" data-en="Boxing (1 year)">Boxe (1 an)</span></span>
+            <span class="tag">💪 <span data-fr="Musculation (5 ans) " data-en="Weightlifting (5 years)">Musculation (5 ans)</span></span>
+            <span class="tag">🚗 <span data-fr="Automobile" data-en="Automotive">Automobile</span></span>
+            <span class="tag">✈️ <span data-fr="Voyages" data-en="Travels">Voyages</span></span>
+            <span class="tag">🎬 <span data-fr="Création vidéo" data-en="Video creation">Création vidéo</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+
+<!-- ══ PAGE COMPÉTENCES ══ -->
+<div class="page" id="page-skills">
+<section>
+  <div class="wrapper">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2 class="section-title" data-fr="Compétences" data-en="Skills">Compétences</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <div class="skill-cat-icon">💻</div>
+        <div class="skill-cat-name" data-fr="Développement" data-en="Development">Développement</div>
+        <div class="skill-tags">
+          <span class="skill-tag highlight">HTML / CSS</span>
+          <span class="skill-tag highlight">React</span>
+          <span class="skill-tag highlight">Next.js</span>
+          <span class="skill-tag highlight">JavaScript</span>
+          <span class="skill-tag highlight">TailwindCSS</span>
+          <span class="skill-tag highlight">PHP</span>
+          <span class="skill-tag highlight">C / C++</span>
+          <span class="skill-tag highlight">C#</span>
+          <span class="skill-tag highlight">Python</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-cat-icon">🛡️</div>
+        <div class="skill-cat-name" data-fr="Cybersécurité" data-en="Cybersecurity">Cybersécurité</div>
+        <div class="skill-tags">
+          <span class="skill-tag highlight" data-fr="Analyse des attaques réseau" data-en="Network attack analysis">Analyse des attaques réseau</span>
+          <span class="skill-tag highlight" data-fr="Durcissement systèmes" data-en="System hardening">Durcissement systèmes</span>
+          <span class="skill-tag highlight" data-fr="Protection infrastructures" data-en="Infrastructure protection">Protection infrastructures</span>
+          <span class="skill-tag highlight">Firewall</span>
+          <span class="skill-tag highlight">Monitoring</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-cat-icon">🌐</div>
+        <div class="skill-cat-name" data-fr="Réseaux & Systèmes" data-en="Networks & Systems">Réseaux & Systèmes</div>
+        <div class="skill-tags">
+          <span class="skill-tag highlight">DHCP / DNS</span>
+          <span class="skill-tag highlight" data-fr="Routage / Pare-feu" data-en="Routing / Firewall">Routage / Pare-feu</span>
+          <span class="skill-tag highlight" data-fr="Virtualisation (VMs)" data-en="Virtualisation (VMs)">Virtualisation (VMs)</span>
+          <span class="skill-tag highlight">Linux / Windows</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-cat-icon">☁️</div>
+        <div class="skill-cat-name" data-fr="Cloud & DevOps" data-en="Cloud & DevOps">Cloud & DevOps</div>
+        <div class="skill-tags">
+          <span class="skill-tag highlight">Docker</span>
+          <span class="skill-tag highlight">Turborepo</span>
+          <span class="skill-tag highlight">Git / GitHub</span>
+          <span class="skill-tag highlight">AWS (EC2, S3)</span>
+        </div>
+        <div class="cert-row">
+          <span class="cert-badge">Cloud Foundations</span>
+          <span class="cert-badge">Cloud Architecting</span>
+          <span class="cert-badge">Lab Project</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-cat-icon">🗄️</div>
+        <div class="skill-cat-name" data-fr="Bases de Données" data-en="Databases">Bases de Données</div>
+        <div class="skill-tags">
+          <span class="skill-tag highlight">SQL</span>
+          <span class="skill-tag highlight" data-fr="Conception BDD" data-en="Database design">Conception BDD</span>
+          <span class="skill-tag highlight">MySQL</span>
+          <span class="skill-tag highlight">PostgreSQL</span>
+          <span class="skill-tag highlight">MangoDB</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-cat-icon">🧠</div>
+        <div class="skill-cat-name" data-fr="Soft Skills" data-en="Soft Skills">Soft Skills</div>
+        <div class="skill-tags">
+          <span class="skill-tag highlight" data-fr="Organisé" data-en="Organized">Organisé</span>
+          <span class="skill-tag highlight" data-fr="Rigoureux" data-en="Rigorous">Rigoureux</span>
+          <span class="skill-tag highlight" data-fr="Esprit d'équipe" data-en="Team spirit">Esprit d'équipe</span>
+          <span class="skill-tag highlight" data-fr="Fiable" data-en="Reliable">Fiable</span>
+          <span class="skill-tag highlight" data-fr="Curieux" data-en="Curious">Curieux</span>
+          <span class="skill-tag highlight" data-fr="Discipliné" data-en="Disciplined">Discipliné</span>
+          <span class="skill-tag highlight" data-fr="Aisance relationnelle" data-en="Communication skills">Aisance relationnelle</span>
+          <span class="skill-tag highlight" data-fr="Leadership" data-en="Leadership">Leadership</span>
+          <span class="skill-tag highlight" data-fr="Esprit d'analyse" data-en="Analytical mind">Esprit d'analyse</span>
+          <span class="skill-tag highlight" data-fr="Bonne gestion du temps" data-en="Time management">Bonne gestion du temps</span>
+          <span class="skill-tag highlight" data-fr="Respect des délais" data-en="Deadline respect">Respect des délais</span>
+          <span class="skill-tag highlight" data-fr="Esprit structuré" data-en="Structured mind">Esprit structuré</span>
+          <span class="skill-tag highlight" data-fr="Confiant" data-en="Confident">Confiant</span>
+          <span class="skill-tag highlight" data-fr="Adaptable" data-en="Adaptable">Adaptable</span>
+          <span class="skill-tag highlight" data-fr="Ouvert d'esprit" data-en="Open-minded">Ouvert d'esprit</span>
+          <span class="skill-tag highlight" data-fr="Sens du détail" data-en="Attention to detail">Sens du détail</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-cat-icon">🛠️</div>
+        <div class="skill-cat-name" data-fr="Outils" data-en="Tools">Outils</div>
+        <div class="skill-tags">
+          <span class="skill-tag highlight">Nmap</span>
+          <span class="skill-tag highlight">Nessus</span>
+          <span class="skill-tag highlight">Nagios</span>
+          <span class="skill-tag highlight">Fail2Ban</span>
+          <span class="skill-tag highlight">Nginx</span>
+          <span class="skill-tag highlight">Metasploit</span>
+          <span class="skill-tag highlight">Hashcat</span>
+          <span class="skill-tag highlight">Wireshark</span>
+          <span class="skill-tag highlight">Iptables</span>
+          <span class="skill-tag highlight" data-fr="Chiffrement (GPG, SSL/TLS)" data-en="Encryption (GPG, SSL/TLS)">Chiffrement (GPG, SSL/TLS)</span>
+          <span class="skill-tag highlight">Grafana</span>
+          <span class="skill-tag highlight">Prometheus</span>
+          <span class="skill-tag highlight">VMware</span>
+          <span class="skill-tag highlight">npm/yarn/pnpm</span>
+          <span class="skill-tag highlight">PCA/PRA</span>
+          <span class="skill-tag highlight">ANSSI</span>
+          <span class="skill-tag highlight">ISO 27001</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-cat-icon">🏆</div>
+        <div class="skill-cat-name" data-fr="Certifications AWS" data-en="AWS Certifications">Certifications AWS</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; padding: 12px 0;">
+          <img src="assets/images/aws-academy-graduate-cloud-architecting.png" alt="AWS Cloud Architecting" style="height: 100px; object-fit: contain;">
+          <img src="assets/images/aws-academy-graduate-cloud-computing-architecting.png" alt="AWS Cloud Computing" style="height: 100px; object-fit: contain;">
+          <img src="assets/images/aws-academy-graduate-cloud-web-application-builder.png" alt="AWS Web Application Builder" style="height: 100px; object-fit: contain;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+
+<!-- ══ PAGE PARCOURS ══ -->
+<div class="page" id="page-experience">
+<section>
+  <div class="wrapper">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2 class="section-title" data-fr="Parcours" data-en="Background">Parcours</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="timeline-grid">
+      <div>
+        <div class="timeline-col-title"><span>🎓</span> <span data-fr="Formations & Diplômes" data-en="Education & Degrees">Formations & Diplômes</span></div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-period">09/2025 – 01/2026</div>
+            <div class="timeline-title" data-fr="Master : Expert Manager en Infrastructures & Cybersécurité" data-en="MSc : Expert Manager in Infrastructure & Cybersecurity">Master : Expert Manager en Infrastructures & Cybersécurité</div>
+            <div class="timeline-sub">CESI x PROMEO – Beauvais</div>
+            <div class="timeline-desc" data-fr="Cybersécurité des Systèmes d'Information, gestion de projets IT, management d'équipe" data-en="Information Systems Cybersecurity, IT project management, team leadership">Cybersécurité des Systèmes d'Information, gestion de projets IT, management d'équipe</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-period">09/2022 – 06/2025</div>
+            <div class="timeline-title">BUT Informatique</div>
+            <div class="timeline-sub">IUT Amiens – Université Picardie Jules Verne</div>
+            <div class="timeline-desc" data-fr="Parcours Réseaux – Dev, admin sys & réseaux, cybersécurité, cloud AWS" data-en="Networks track – Dev, sys & network admin, cybersecurity, AWS cloud">Parcours Réseaux – Dev, admin sys & réseaux, cybersécurité, cloud AWS</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-period">2025</div>
+            <div class="timeline-title">AWS Academy Graduate</div>
+            <div class="timeline-sub">Amazon Web Services</div>
+            <div class="cert-row" style="margin-top:8px;">
+              <span class="cert-badge" style="font-size:0.64rem;">Cloud Foundations</span>
+              <span class="cert-badge" style="font-size:0.64rem;">Cloud Architecting</span>
+              <span class="cert-badge" style="font-size:0.64rem;">Lab Project</span>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-period">09/2019 – 06/2022</div>
+            <div class="timeline-title" data-fr="BAC Général – Mention Assez Bien" data-en="French Baccalaureate – Merit">BAC Général – Mention Assez Bien</div>
+            <div class="timeline-sub">Lycée Jeanne Hachette – Beauvais</div>
+            <div class="timeline-desc" data-fr="Spécialités : Géopolitique et SVT" data-en="Specialisations: Geopolitics and Life Sciences">Spécialités : Géopolitique et SVT</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="timeline-col-title"><span>💼</span> <span data-fr="Expériences Professionnelles" data-en="Professional Experience">Expériences Professionnelles</span></div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-period">03/2025 – 06/2025</div>
+            <div class="timeline-title" data-fr="Développeur Web React / Next.js" data-en="React / Next.js Web Developer">Développeur Web React / Next.js</div>
+            <div class="timeline-sub">Feelingjack – Beauvais <span style="color:var(--accent);font-size:0.68rem;">(Stage BUT3)</span></div>
+            <div class="timeline-desc">
+              <ul>
+                <li data-fr="Plateforme événementielle – Marathon du Lac d'Annecy" data-en="Event platform – Marathon du Lac d'Annecy">Plateforme événementielle – Marathon du Lac d'Annecy</li>
+                <li data-fr="Stack : Next.js, TailwindCSS, Turborepo" data-en="Stack: Next.js, TailwindCSS, Turborepo">Stack : Next.js, TailwindCSS, Turborepo</li>
+                <li data-fr="Fréquentation augmentée de +15%" data-en="Traffic increased by +15%">Fréquentation augmentée de <strong style="color:var(--accent3)">+15%</strong></li>
+                <li data-fr="Retours utilisateurs très positifs" data-en="Very positive user feedback">Retours utilisateurs très positifs</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-period">09/2024 - 02/2025</div>
+            <div class="timeline-title" data-fr="Projet fin d'étude – Plateforme Streaming" data-en="Final Year Project – Streaming Platform">Projet fin d'étude – Plateforme Streaming</div>
+            <div class="timeline-sub">IUT Amiens</div>
+            <div class="timeline-desc">
+              <ul>
+                <li data-fr="Conception et coordination d'un site web de streaming" data-en="Design and coordination of a streaming website">Conception et coordination d'un site web de streaming</li>
+                <li data-fr="Développement complet : design, fonctionnalités, intégration, optimisation et sécurisation." data-en="Full development: design, features, integration, optimization and security.">Développement complet : design, fonctionnalités, intégration, optimisation et sécurisation.</li>
+                <li data-fr="Création d'une plateforme performante et intuitive." data-en="Creation of a high-performance and intuitive platform.">Création d'une plateforme performante et intuitive.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-period">01/2024 - 03/2024</div>
+            <div class="timeline-title" data-fr="Conception & Coordination Projet Web" data-en="Web Project Design & Coordination">Conception & Coordination Projet Web</div>
+            <div class="timeline-sub">UniLaSalle – Beauvais <span style="color:var(--accent);font-size:0.68rem;">(Stage BUT2)</span></div>
+            <div class="timeline-desc">
+              <ul>
+                <li data-fr="Conception et Coordination de Projet Web" data-en="Web Project Design and Coordination">Conception et Coordination de Projet Web</li>
+                <li data-fr="Réalisation de toutes les étapes nécessaires à la création d'un site web." data-en="Execution of all necessary steps for creating a website.">Réalisation de toutes les étapes nécessaires à la création d'un site web.</li>
+                <li data-fr="Mise en place d'une plateforme conforme aux besoins du client." data-en="Implementation of a platform compliant with client requirements.">Mise en place d'une plateforme conforme aux besoins du client.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-period">07/2023</div>
+            <div class="timeline-title" data-fr="Opérateur – Mission d'intérim" data-en="Operator – Temp Mission">Opérateur – Mission d'intérim</div>
+            <div class="timeline-sub">Menway Emploi – Beauvais</div>
+            <div class="timeline-desc">
+              <ul>
+                <li data-fr="Préparation produits, nettoyage de ligne" data-en="Product preparation, line cleaning">Préparation produits, nettoyage de ligne</li>
+                <li data-fr="Amélioration du flux de travail, réduction des arrêts machine" data-en="Workflow improvement, reduced machine downtime">Amélioration du flux de travail, réduction des arrêts machine</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+
+<!-- ══ PAGE PROJETS ══ -->
+<div class="page" id="page-projects">
+<section>
+  <div class="wrapper">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2 class="section-title" data-fr="Projets" data-en="Projects">Projets</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="projects-grid">
+
+      <div class="project-card" onclick="openProject('marathon')">
+        <div class="project-type"> <span data-fr="Stage BUT3 – Feelingjack - 2025" data-en="Internship BUT3 – Feelingjack - 2025">Stage BUT3 – Feelingjack - 2025</span></div>
+        <div class="project-name" data-fr="Plateforme Marathon du Lac d'Annecy" data-en="Marathon du Lac d'Annecy Platform">Plateforme Marathon du Lac d'Annecy</div>
+        <div class="project-desc" data-fr="Développement d'une plateforme événementielle complète pour Feelingjack. Amélioration de l'attractivité, +15% de fréquentation, retours utilisateurs très positifs." data-en="Full development of an event platform for Feelingjack. +15% traffic, very positive user feedback.">
+          Développement d'une plateforme événementielle complète pour Feelingjack. Amélioration de l'attractivité, +15% de fréquentation, retours utilisateurs très positifs.
+        </div>
+        <div class="project-stack">
+          <span class="skill-tag highlight">Next.js</span>
+          <span class="skill-tag highlight">TailwindCSS</span>
+          <span class="skill-tag">Turborepo</span>
+          <span class="skill-tag">React</span>
+        </div>
+        <div class="project-cta" data-fr="Voir le détail →" data-en="View details →">Voir le détail →</div>
+      </div>
+
+      <div class="project-card" onclick="openProject('streaming')">
+        <div class="project-type"><span class="project-type-dot"></span> <span data-fr="Projet fin d'étude – IUT Amiens - 2025" data-en="Final Year Project – IUT Amiens - 2025">Projet fin d'étude – IUT Amiens - 2025</span></div>
+        <div class="project-name" data-fr="Plateforme de Streaming" data-en="Streaming Platform">Plateforme de Streaming</div>
+        <div class="project-desc" data-fr="Conception et développement complet d'une plateforme de streaming : architecture, design UI/UX, intégration des fonctionnalités, optimisation des performances et sécurisation." data-en="Full design and development of a streaming platform: architecture, UI/UX, features, optimisation and security.">
+          Conception et développement complet d'une plateforme de streaming : architecture, design UI/UX, intégration des fonctionnalités, optimisation des performances et sécurisation.
+        </div>
+        <div class="project-stack">
+          <span class="skill-tag highlight">Web Dev</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag" data-fr="Sécurité" data-en="Security">Sécurité</span>
+          <span class="skill-tag">PHP</span>
+        </div>
+        <div class="project-cta" data-fr="Voir le détail →" data-en="View details →">Voir le détail →</div>
+      </div>
+
+      <div class="project-card" onclick="openProject('unilasalle')">
+        <div class="project-type"><span class="project-type-dot"></span> <span data-fr="Stage BUT2 – UniLaSalle - 2024 " data-en="Internship Year 2 – UniLaSalle - 2024">Stage BUT2 – UniLaSalle - 2024</span></div>
+        <div class="project-name" data-fr="Site Web Client – UniLaSalle" data-en="Client Website – UniLaSalle">Site Web Client – UniLaSalle</div>
+        <div class="project-desc" data-fr="Réalisation de toutes les étapes de création d'un site web professionnel. Transformer une notion scientifique complexe en un outil simple et accessible à tous." data-en="Complete execution of all steps to build a professional website tailored to client needs. Transforming a complex scientific concept into a simple, user-friendly tool.">
+          Réalisation de toutes les étapes de création d'un site web professionnel. Transformer une notion scientifique complexe en un outil simple et accessible à tous. 
+        </div>
+        <div class="project-stack">
+          <span class="skill-tag highlight ">HTML / CSS</span>
+          <span class="skill-tag">JavaScript</span>
+        </div>
+        <div class="project-cta" data-fr="Voir le détail →" data-en="View details →">Voir le détail →</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+</div>
+
+
+<!-- ══ PAGE CONTACT ══ -->
+<div class="page" id="page-contact">
+<section>
+  <div class="wrapper">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2 class="section-title" data-fr="Contact" data-en="Contact">Contact</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info-col">
+        <p style="font-size:0.82rem;color:var(--text-mid);line-height:1.85;margin-bottom:8px;" data-fr="Disponible pour une alternance dès maintenant. N'hésitez pas à me contacter pour discuter d'une opportunité !" data-en="Available for an apprenticeship right now. Feel free to get in touch to discuss any opportunity!">
+          Disponible pour une alternance dès maintenant. N'hésitez pas à me contacter pour discuter d'une opportunité !
+        </p>
+        <div class="contact-item-card">
+          <div class="contact-item-icon">📍</div>
+          <div>
+            <div class="contact-item-label" data-fr="Localisation" data-en="Location">Localisation</div>
+            <div class="contact-item-value">Beauvais, 60000, France</div>
+          </div>
+        </div>
+        <div class="contact-item-card">
+          <div class="contact-item-icon">📞</div>
+          <div>
+            <div class="contact-item-label" data-fr="Téléphone" data-en="Phone">Téléphone</div>
+            <div class="contact-item-value"><a href="tel:+33749703071">07 49 70 30 71</a></div>
+          </div>
+        </div>
+        <div class="contact-item-card">
+          <div class="contact-item-icon">✉️</div>
+          <div>
+            <div class="contact-item-label">Email</div>
+            <div class="contact-item-value"><a href="mailto:kaipajyanlevan@gmail.com">kaipajyanlevan@gmail.com</a></div>
+          </div>
+        </div>
+        <div class="contact-item-card">
+          <div class="contact-item-icon">🚗</div>
+          <div>
+            <div class="contact-item-label" data-fr="Mobilité" data-en="Mobility">Mobilité</div>
+            <div class="contact-item-value" data-fr="Permis B – Véhiculé" data-en="Driving licence – Own vehicle">Permis B – Véhiculé</div>
+          </div>
+        </div>
+        <div class="contact-item-card">
+          <div class="contact-item-icon">💼</div>
+          <div>
+            <div class="contact-item-label" data-fr="Statut" data-en="Status">Statut</div>
+            <div class="contact-item-value" style="color:var(--accent3);" data-fr="🟢 Disponible en alternance" data-en="🟢 Available for apprenticeship">🟢 Disponible en alternance</div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h3 style="font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--white);margin-bottom:24px;" data-fr="Envoyer un message" data-en="Send a message">Envoyer un message</h3>
+        <form id="contactForm" action="https://formspree.io/f/xlgoegnk" method="POST">
+          <div class="form-group">
+            <label class="form-label" data-fr="Votre nom" data-en="Your name">Votre nom</label>
+            <input type="text" class="form-control" name="name" data-placeholder-fr="Levan Kaipajyan" data-placeholder-en="Levan Kaipajyan" placeholder="Levan Kaipajyan" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control" name="email" placeholder="Levan@company.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" data-fr="Société / École" data-en="Company / School">Société / École</label>
+            <input type="text" class="form-control" name="company" data-placeholder-fr="Nom de l'entreprise" data-placeholder-en="Company name" placeholder="Nom de l'entreprise">
+          </div>
+          <div class="form-group">
+            <label class="form-label" data-fr="Message" data-en="Message">Message</label>
+            <textarea class="form-control" name="message" rows="4" data-placeholder-fr="Votre message..." data-placeholder-en="Your message..." placeholder="Votre message..." required></textarea>
+          </div>
+          <div id="formMessage" style="display:none;margin-bottom:16px;padding:12px;border-radius:8px;font-size:0.9rem;text-align:center;"></div>
+          <button type="submit" class="form-submit" id="submitBtn" data-fr="Envoyer →" data-en="Send →">Envoyer →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-text"><span>Levan Kaipajyan</span></div>
+    <div class="footer-text" data-fr="© 2026 Tous droits réservés." data-en="© 2026 All rights reserved.">© 2026 Tous droits réservés.</div>
+  </div>
+</footer>
+
+
+<!-- ══ MODAL PROJET ══ -->
+<div class="project-modal" id="projectModal">
+  <div class="project-modal-inner">
+    <button class="modal-close" onclick="closeProject()">✕</button>
+    <div class="modal-header">
+      <div class="modal-tag" id="modalTag"></div>
+      <h2 class="modal-title" id="modalTitle"></h2>
+      <div class="modal-stack" id="modalStack"></div>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+
+<script>
+  let currentLang = 'fr';
+
+  // ── Données des projets ────────────────────────────────────────────────────
+  const PROJECTS = {
+    marathon: {
+      tag: { fr: 'Stage BUT3 — Feelingjack · 03/2025 - 06/2025', en: 'Internship BUT3 — Feelingjack ·  03/2025 - 06/2025' },
+      title: { fr: "Plateforme Marathon du Lac d'Annecy", en: "Marathon du Lac d'Annecy Platform" },
+      stack: ['Next.js', 'React', 'TailwindCSS', 'Turborepo', 'Vercel'],
+      stats: [
+        { value: '+15%', label: { fr: 'Fréquentation', en: 'Traffic' } },
+        { value: '4 mois', label: { fr: 'Durée du stage', en: 'Internship length' } },
+        { value: '⭐', label: { fr: 'Retours positifs', en: 'Positive feedback' } },
+      ],
+      sections: [
+        {
+          titleFr: 'Contexte du projet',
+          titleEn: 'Project context',
+          contentFr: '<p>Dans le cadre de mon stage de fin de BUT Informatique chez <strong>Feelingjack</strong> à Beauvais, j\'ai développé une plateforme événementielle complète pour le <strong>Marathon du Lac d\'Annecy</strong>.</p><p>L\'objectif était de moderniser l\'expérience numérique des participants : inscription, résultats, parcours et informations pratiques.</p>',
+          contentEn: '<p>As part of my final internship at <strong>Feelingjack</strong> in Beauvais, I developed a full event platform for the <strong>Marathon du Lac d\'Annecy</strong>.</p><p>The goal was to modernise the digital experience for participants: registration, results, route and practical info.</p>',
+        },
+        {
+          titleFr: 'Ce que j\'ai réalisé',
+          titleEn: 'What I built',
+          type: 'features',
+          features: {
+            fr: [
+              'Architecture monorepo avec Turborepo pour la gestion multi-packages',
+              'Développement des pages événement, programme, inscriptions et résultats',
+              'Optimisation des performances : Core Web Vitals, lazy loading, SEO',
+              'Design responsive adapté mobile, tablette et desktop',
+              'Intégration d\'une carte interactive du parcours',
+              'Déploiement continu via Vercel avec preview branches',
+            ],
+            en: [
+              'Monorepo architecture with Turborepo for multi-package management',
+              'Development of event, programme, registration and results pages',
+              'Performance optimisation: Core Web Vitals, lazy loading, SEO',
+              'Responsive design adapted for mobile, tablet and desktop',
+              'Integration of an interactive route map',
+              'Continuous deployment via Vercel with preview branches',
+            ],
+          },
+        },
+        {
+          titleFr: 'Galerie',
+          titleEn: 'Gallery',
+          type: 'gallery',
+          cols: 2,
+          images: [
+            { src: 'assets/images/Feelingjack/perso.png', placeholder: 'Accueil – Page principale' },
+            { src: 'assets/images/Feelingjack/Edit.png', placeholder: 'Page parcours & carte' },
+            { src: 'assets/images/Feelingjack/tiers.png', placeholder: 'Interface mobile' },
+            { src: 'assets/images/Feelingjack/acc_tiers.png', placeholder: 'Page inscriptions' },
+          ],
+        },
+        {
+          titleFr: 'Résultats & impact',
+          titleEn: 'Results & impact',
+          contentFr: '<p>La nouvelle plateforme a généré une <strong>hausse de fréquentation de +15%</strong> par rapport à l\'édition précédente, avec des retours utilisateurs très positifs sur la clarté de l\'interface et la fluidité de navigation.</p>',
+          contentEn: '<p>The new platform generated a <strong>+15% increase in traffic</strong> compared to the previous edition, with very positive user feedback on interface clarity and navigation fluidity.</p>',
+        },
+      ],
+    },
+
+    streaming: {
+      tag: { fr: 'Projet fin d\'étude — IUT Amiens · 09/2024 - 02/2025', en: 'Final Year Project — IUT Amiens · 09/2024 - 02/2025' },
+      title: { fr: 'Plateforme de Streaming', en: 'Streaming Platform' },
+      stack: ['PHP', 'JavaScript', 'MySQL', 'HTML/CSS'],
+      stats: [
+        { value: '6 mois', label: { fr: 'Durée du projet', en: 'Project length' } },
+        { value: '100%', label: { fr: 'Fonctionnalités', en: 'Features' } },
+        { value: '🔒', label: { fr: 'Sécurisé', en: 'Secured' } },
+      ],
+      sections: [
+        {
+          titleFr: 'Contexte du projet',
+          titleEn: 'Project context',
+          contentFr: '<p>Projet de fin d\'études réalisé à l\'<strong>IUT d\'Amiens</strong>, consistant à concevoir et développer de A à Z une plateforme de streaming vidéo complète.</p><p>Ce projet a mobilisé l\'ensemble des compétences acquises durant le BUT Informatique : développement full-stack, BDD, sécurisation et gestion de projet.</p>',
+          contentEn: '<p>Final year project at <strong>IUT Amiens</strong>, designing and building a complete video streaming platform from scratch.</p><p>This drew on all skills from the Computer Science degree: full-stack dev, databases, security and project management.</p>',
+        },
+        {
+          titleFr: 'Fonctionnalités développées',
+          titleEn: 'Features developed',
+          type: 'features',
+          features: {
+            fr: [
+              'Système d\'authentification sécurisé (sessions, hachage des mots de passe)',
+              'Upload et streaming de vidéos avec lecteur HTML5',
+              'Moteur de recherche et filtres par catégorie',
+              'Gestion des utilisateurs, abonnements et favoris',
+              'Interface d\'administration pour la modération du contenu',
+              'Sécurisation : protection XSS, CSRF, injections SQL',
+            ],
+            en: [
+              'Secure authentication system (sessions, password hashing)',
+              'Video upload and streaming with HTML5 player',
+              'Search engine and category filters',
+              'User management, subscriptions and favourites',
+              'Admin interface for content moderation',
+              'Security: XSS, CSRF, SQL injection protection',
+            ],
+          },
+        },
+        {
+          titleFr: 'Galerie',
+          titleEn: 'Gallery',
+          type: 'gallery',
+          cols: 2,
+          images: [
+            { src: 'assets/images/Streaming/conf_kernel.png', placeholder: 'Page d\'accueil plateforme' },
+            { src: 'assets/images/Streaming/result_kernel.png', placeholder: 'Lecteur vidéo intégré' },
+            { src: 'assets/images/Streaming/docker_swamp.png', placeholder: 'Interface catalogue' },
+            { src: 'assets/images/Streaming/ffmpeg.png', placeholder: 'Dashboard admin' },
+          ],
+        },
+      ],
+    },
+
+    unilasalle: {
+      tag: { fr: 'Stage BUT2 — UniLaSalle Beauvais · 01/2024 - 03/2024', en: 'Internship Year 2 — UniLaSalle Beauvais · 01/2024 - 03/2024' },
+      title: { fr: 'Site Web Client – UniLaSalle', en: 'Client Website – UniLaSalle' },
+      stack: ['HTML', 'CSS', 'JavaScript'],
+      stats: [
+        { value: '2 mois', label: { fr: 'Durée du stage', en: 'Internship length' } },
+        { value: '✓', label: { fr: 'Livré en temps', en: 'On-time delivery' } },
+        { value: '100%', label: { fr: 'Besoins couverts', en: 'Requirements met' } },
+      ],
+      sections: [
+        {
+          titleFr: 'Contexte du projet',
+          titleEn: 'Project context',
+          contentFr: '<p>Dans le cadre de mon stage de BUT 2, j’ai contribué à la transformation d’un guide scientifique sur le <strong>Réservoir Utile Maximum (RUM)</strong> en une solution numérique permettant de simplifier son calcul. À partir d’informations techniques complexes, l’objectif était de proposer un outil accessible capable de fournir directement cette donnée aux utilisateurs selon les caractéristiques de leur sol. J’ai ainsi participé à la structuration du projet et à la conception d’une interface intuitive adaptée à un public non spécialiste.</p><p>Cette expérience m’a permis de rendre des concepts scientifiques complexes compréhensibles et utilisables par tous, et de mieux appréhender les enjeux d’un projet d’une telle envergure, notamment grâce à sa collaboration avec l’organisation RMT Sol et Territoires. Elle a également confirmé mon intérêt pour une informatique appliquée, au service de problématiques variées.</p>',
+          contentEn: '<p>As part of my BUT 2 internship, I helped transform a scientific guide on <strong> Maximum Useful Reservoir (MUR) </strong> into a digital solution designed to simplify its calculation. Starting with complex technical information, the aim was to provide an accessible tool capable of delivering this data directly to users based on the characteristics of their soil. I was therefore involved in structuring the project and designing an intuitive interface suitable for a non-specialist audience.</p><p>This experience enabled me to make complex scientific concepts understandable and usable by everyone, and to gain a better understanding of the challenges involved in a project of this scale, particularly through collaboration with the organisation RMT Sol et Territoires. It also confirmed my interest in applied computing, applied to a variety of issues.</p>',
+        },
+        {
+          titleFr: 'Ce que j\'ai réalisé',
+          titleEn: 'What I built',
+          type: 'features',
+          features: {
+            fr: [
+              'Analyse et compréhension d’un guide scientifique complexe (RUM)',
+              'Extraction et structuration des données techniques exploitables',
+              'Traduction des besoins scientifiques en besoins fonctionnels',
+              'Définition du parcours utilisateur et de la logique de calcul',
+              'Rédaction d’un cahier des charges détaillé',
+              'Conception de maquettes (wireframes) orientées expérience utilisateur',
+              'Simplification des processus pour un public non spécialiste',
+              'Coordination et préparation des éléments nécessaires à la réalisation technique',
+              'Mise en place d’une vision globale du projet et de son fonctionnement',
+              'Collaboration avec différents acteurs du projet (scientifiques, encadrants, responsables RMT du projet, etc.)',
+              'Documentation technique remise au client',
+            ],
+            en: [
+              'Analysis and understanding of a complex scientific guide (MUR)',
+              'Extraction and structuring of exploitable technical data',
+              'Translation of scientific needs into functional requirements',
+              'Definition of user journey and calculation logic',
+              'Drafting of a detailed specifications document',
+              'Design of user experience-oriented wireframes',
+              'Simplification of processes for a non-specialist audience',
+              'Coordination and preparation of elements necessary for technical implementation',
+              'Establishment of a global vision of the project and its functioning',
+              'Collaboration with different project stakeholders (scientists, supervisors, RMT project managers, etc.)',
+              'Technical documentation delivered to the client',
+            ],
+          },
+        },
+      ],
+    },
+  };
+
+
+  // ── Ouvrir le modal ────────────────────────────────────────────────────────
+  function openProject(id) {
+    var proj = PROJECTS[id];
+    if (!proj) return;
+    var lang = currentLang || 'fr';
+
+    document.getElementById('modalTag').textContent = proj.tag[lang];
+    document.getElementById('modalTitle').textContent = proj.title[lang];
+
+    var stackEl = document.getElementById('modalStack');
+    stackEl.innerHTML = proj.stack.map(function(s) {
+      return '<span class="skill-tag highlight">' + s + '</span>';
+    }).join('');
+
+    var statsHtml = '';
+    if (proj.stats && proj.stats.length) {
+      statsHtml = '<div class="modal-stats">' + proj.stats.map(function(st) {
+        return '<div class="modal-stat"><div class="modal-stat-value">' + st.value + '</div><div class="modal-stat-label">' + st.label[lang] + '</div></div>';
+      }).join('') + '</div>';
+    }
+
+    var sectionsHtml = proj.sections.map(function(sec) {
+      var title = lang === 'fr' ? sec.titleFr : sec.titleEn;
+
+      if (sec.type === 'features') {
+        var feats = sec.features[lang];
+        return '<div class="modal-section"><div class="modal-section-title">' + title + '</div><div class="modal-features">' +
+          feats.map(function(f) {
+            return '<div class="modal-feature"><div class="modal-feature-dot"></div><span>' + f + '</span></div>';
+          }).join('') + '</div></div>';
+      }
+
+      if (sec.type === 'gallery') {
+        var imgs = sec.images.map(function(img) {
+          if (img.src) {
+            return '<div class="modal-gallery-img"><img src="' + img.src + '" alt="' + img.placeholder + '"></div>';
+          }
+          return '<div class="modal-gallery-img"><span style="font-size:1.5rem;opacity:0.25">🖼️</span><span style="font-size:0.68rem;color:var(--text-dim);text-align:center;padding:0 12px;">' + img.placeholder + '</span></div>';
+        }).join('');
+        return '<div class="modal-section"><div class="modal-section-title">' + title + '</div><div class="modal-gallery cols-' + (sec.cols || 2) + '">' + imgs + '</div></div>';
+      }
+
+      var content = lang === 'fr' ? sec.contentFr : sec.contentEn;
+      return '<div class="modal-section"><div class="modal-section-title">' + title + '</div><div class="modal-text">' + content + '</div></div>';
+    }).join('');
+
+    document.getElementById('modalBody').innerHTML = statsHtml + sectionsHtml;
+
+    var modal = document.getElementById('projectModal');
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeProject() {
+    document.getElementById('projectModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Fermer en cliquant sur le fond
+  document.getElementById('projectModal').addEventListener('click', function(e) {
+    if (e.target === this) closeProject();
+  });
+
+  // Fermer avec Echap
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeProject();
+  });
+
+  function setLang(lang) {
+    currentLang = lang;
+    document.querySelectorAll('.lang-btn').forEach(function(b, i) {
+      b.classList.toggle('active', (lang === 'fr' && i === 0) || (lang === 'en' && i === 1));
+    });
+    document.querySelectorAll('[data-fr]').forEach(function(el) {
+      var txt = el.getAttribute('data-' + lang);
+      if (txt) el.innerHTML = txt;
+    });
+    document.querySelectorAll('[data-placeholder-' + lang + ']').forEach(function(el) {
+      el.placeholder = el.getAttribute('data-placeholder-' + lang);
+    });
+    document.documentElement.lang = lang;
+  }
+
+  function showPage(pageId, btn) {
+    document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
+    var pg = document.getElementById('page-' + pageId);
+    if (pg) pg.classList.add('active');
+    document.querySelectorAll('[data-nav]').forEach(function(b) { b.classList.remove('active'); });
+    document.querySelectorAll('[data-nav="' + pageId + '"]').forEach(function(b) { b.classList.add('active'); });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function toggleMobileMenu() {
+    document.getElementById('mobileNav').classList.toggle('open');
+  }
+
+  function closeMobile() {
+    document.getElementById('mobileNav').classList.remove('open');
+  }
+
+  window.addEventListener('scroll', function() {
+    var scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+    document.getElementById('scrollLine').style.width = Math.min(scrolled, 100) + '%';
+  });
+
+  // ── Gestion du formulaire de contact ────────────────────────────────────
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    var form = this;
+    var submitBtn = document.getElementById('submitBtn');
+    var formMessage = document.getElementById('formMessage');
+    var originalText = submitBtn.textContent;
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = currentLang === 'fr' ? 'Envoi en cours...' : 'Sending...';
+
+    // Préparer les données du formulaire
+    var formData = new FormData(form);
+
+    // Envoyer avec fetch API
+    fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(function(response) {
+      if (response.ok) {
+        formMessage.style.display = 'block';
+        formMessage.style.backgroundColor = 'rgba(76, 175, 80, 0.2)';
+        formMessage.style.color = '#4CAF50';
+        formMessage.style.borderLeft = '4px solid #4CAF50';
+        formMessage.textContent = currentLang === 'fr' 
+          ? '✓ Message envoyé avec succès ! Merci de votre message.' 
+          : '✓ Message sent successfully! Thank you for your message.';
+        
+        form.reset();
+        
+        setTimeout(function() {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+          formMessage.style.display = 'none';
+        }, 3000);
+      } else {
+        throw new Error('Erreur lors de l\'envoi');
+      }
+    })
+    .catch(function(error) {
+      formMessage.style.display = 'block';
+      formMessage.style.backgroundColor = 'rgba(244, 67, 54, 0.2)';
+      formMessage.style.color = '#f44336';
+      formMessage.style.borderLeft = '4px solid #f44336';
+      formMessage.textContent = currentLang === 'fr'
+        ? '✗ Une erreur est survenue. Veuillez réessayer.'
+        : '✗ An error occurred. Please try again.';
+      
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+      
+      setTimeout(function() {
+        formMessage.style.display = 'none';
+      }, 5000);
+    });
+  });
+
+  setLang('fr');
+</script>
+</body>
+</html>
