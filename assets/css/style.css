@@ -1153,14 +1153,14 @@ footer {
 
 .modal-stat-value {
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: 16px;
   font-weight: 800;
   color: var(--accent);
   margin-bottom: 4px;
 }
 
 .modal-stat-label {
-  font-size: 0.68rem;
+  font-size: 12px;
   color: var(--text-dim);
   letter-spacing: 0.05em;
 }

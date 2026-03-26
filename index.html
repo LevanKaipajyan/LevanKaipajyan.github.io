@@ -15,7 +15,7 @@
 
 <header>
   <div class="header-inner">
-    <div class="logo">LK<span>.</span></div>
+    <button class="logo" onclick="showPage('hero',this)">LK<span>.</span></button>
     <div class="nav-links" id="navLinks">
       <button data-nav="hero" class="active" onclick="showPage('hero',this)" data-fr="Accueil" data-en="Home">Accueil</button>
       <button data-nav="about" onclick="showPage('about',this)" data-fr="À Propos" data-en="About">À Propos</button>
@@ -60,7 +60,7 @@
         <h1 class="hero-name">Levan<br><span class="line2">Kaipajyan</span></h1>
         <p class="hero-role">
           <strong data-fr="Diplômé BUT Informatique" data-en="Computer Science Graduate (BUT)">Diplômé BUT Informatique</strong><br>
-          <span data-fr="En Master Cybersécurité & Réseaux" data-en="MSc Cybersecurity & Networks">En Master Cybersécurité & Réseaux</span>
+          <span data-fr="Actuellement en Bac+5 Cybersécurité & Réseaux" data-en=" MSc Cybersecurity & Networks">Actuellement en Bac+5 Cybersécurité & Réseaux</span>
         </p>
         <p class="hero-desc" data-fr="À la recherche d'une alternance en cybersécurité dès septembre 2026." data-en="Looking for a cybersecurity apprenticeship starting September 2026.">
             À la recherche d'une alternance en cybersécurité dès septembre 2026.
@@ -196,7 +196,6 @@
           <span class="skill-tag highlight">PHP</span>
           <span class="skill-tag highlight">C / C++</span>
           <span class="skill-tag highlight">C#</span>
-          <span class="skill-tag highlight">Python</span>
         </div>
       </div>
       <div class="skill-category">
@@ -580,9 +579,9 @@
       title: { fr: "Plateforme Marathon du Lac d'Annecy", en: "Marathon du Lac d'Annecy Platform" },
       stack: ['Next.js', 'React', 'TailwindCSS', 'Turborepo', 'Vercel'],
       stats: [
-        { value: '+15%', label: { fr: 'Fréquentation', en: 'Traffic' } },
-        { value: '4 mois', label: { fr: 'Durée du stage', en: 'Internship length' } },
-        { value: '⭐', label: { fr: 'Retours positifs', en: 'Positive feedback' } },
+        { value: { fr: '3 mois', en: '3 months' }, label: { fr: 'Durée du stage', en: 'Internship length' } },
+        { value: { fr: '+15%', en: '+15%' }, label: { fr: 'Fréquentation', en: 'Traffic' } },
+        { value: { fr: '⭐', en: '⭐' }, label: { fr: 'Retours positifs', en: 'Positive feedback' } },
       ],
       sections: [
         {
@@ -640,9 +639,9 @@
       title: { fr: 'Plateforme de Streaming', en: 'Streaming Platform' },
       stack: ['PHP', 'JavaScript', 'MySQL', 'HTML/CSS'],
       stats: [
-        { value: '6 mois', label: { fr: 'Durée du projet', en: 'Project length' } },
-        { value: '100%', label: { fr: 'Fonctionnalités', en: 'Features' } },
-        { value: '🔒', label: { fr: 'Sécurisé', en: 'Secured' } },
+        { value: { fr: '6 mois', en: '6 months' }, label: { fr: 'Durée du projet', en: 'Project length' } },
+        { value: { fr: '100%', en: '100%' }, label: { fr: 'Fonctionnalités', en: 'Features' } },
+        { value: { fr: '🔒', en: '🔒' }, label: { fr: 'Sécurisé', en: 'Secured' } },
       ],
       sections: [
         {
@@ -694,9 +693,9 @@
       title: { fr: 'Site Web Client – UniLaSalle', en: 'Client Website – UniLaSalle' },
       stack: ['HTML', 'CSS', 'JavaScript'],
       stats: [
-        { value: '2 mois', label: { fr: 'Durée du stage', en: 'Internship length' } },
-        { value: '✓', label: { fr: 'Livré en temps', en: 'On-time delivery' } },
-        { value: '100%', label: { fr: 'Besoins couverts', en: 'Requirements met' } },
+        { value: { fr: '2 mois', en: '2 months' }, label: { fr: 'Durée du stage', en: 'Internship length' } },
+        { value: { fr: 'Projet d\'envergure', en: 'Major project ' }, label: { fr: 'Collab. RMT Sol & Territoires', en: 'Collaboration with RMT Sol & Territoires' } },
+        { value: { fr: 'Accessible', en: 'Accessible' }, label: { fr: 'Interface simple et intuitive', en: 'Simple and intuitive interface' } },
       ],
       sections: [
         {
@@ -738,7 +737,19 @@
             ],
           },
         },
+        {
+          titleFr: 'Galerie',
+          titleEn: 'Gallery',
+          type: 'gallery',
+          cols: 2,
+          images: [
+            { src: 'assets/images/Unilasalle/rapport_rum.png', placeholder: 'Page d\'accueil plateforme' },
+            { src: 'assets/images/Unilasalle/maquette.png', placeholder: 'Lecteur vidéo intégré' },
+        
+          ],
+        },
       ],
+      
     },
   };
 
@@ -760,7 +771,7 @@
     var statsHtml = '';
     if (proj.stats && proj.stats.length) {
       statsHtml = '<div class="modal-stats">' + proj.stats.map(function(st) {
-        return '<div class="modal-stat"><div class="modal-stat-value">' + st.value + '</div><div class="modal-stat-label">' + st.label[lang] + '</div></div>';
+        return '<div class="modal-stat"><div class="modal-stat-value">' + st.value[lang] + '</div><div class="modal-stat-label">' + st.label[lang] + '</div></div>';
       }).join('') + '</div>';
     }
 
