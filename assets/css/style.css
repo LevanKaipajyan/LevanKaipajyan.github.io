@@ -1153,7 +1153,7 @@ footer {
 
 .modal-stat-value {
   font-family: var(--font-display);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 800;
   color: var(--accent);
   margin-bottom: 4px;
