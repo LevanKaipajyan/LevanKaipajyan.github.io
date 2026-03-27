@@ -275,13 +275,17 @@
           <span class="skill-tag highlight">Nessus</span>
           <span class="skill-tag highlight">Nagios</span>
           <span class="skill-tag highlight">Fail2Ban</span>
+          <span class="skill-tag highlight">CrowdSec</span>
           <span class="skill-tag highlight">Nginx</span>
           <span class="skill-tag highlight">Metasploit</span>
           <span class="skill-tag highlight">Hashcat</span>
           <span class="skill-tag highlight">Wireshark</span>
           <span class="skill-tag highlight">Iptables</span>
+          <span class="skill-tag highlight">FFmpeg</span>
+          <span class="skill-tag highlight">Ansible</span>
           <span class="skill-tag highlight" data-fr="Chiffrement (GPG, SSL/TLS)" data-en="Encryption (GPG, SSL/TLS)">Chiffrement (GPG, SSL/TLS)</span>
           <span class="skill-tag highlight">Grafana</span>
+           <span class="skill-tag highlight">Netdata</span>
           <span class="skill-tag highlight">Prometheus</span>
           <span class="skill-tag highlight">VMware</span>
           <span class="skill-tag highlight">npm/yarn/pnpm</span>
@@ -440,10 +444,9 @@
           Conception et développement complet d'une plateforme de streaming : architecture, design UI/UX, intégration des fonctionnalités, optimisation des performances et sécurisation.
         </div>
         <div class="project-stack">
-          <span class="skill-tag highlight">Web Dev</span>
+          <span class="skill-tag ">Web Dev</span>
           <span class="skill-tag">SQL</span>
-          <span class="skill-tag" data-fr="Sécurité" data-en="Security">Sécurité</span>
-          <span class="skill-tag">PHP</span>
+          <span class="skill-tag highlight" data-fr="Sécurité" data-en="Security">Sécurité</span>
         </div>
         <div class="project-cta" data-fr="Voir le détail →" data-en="View details →">Voir le détail →</div>
       </div>
@@ -580,14 +583,15 @@
       stack: ['Next.js', 'React', 'TailwindCSS', 'Turborepo', 'Vercel'],
       stats: [
         { value: { fr: '3 mois', en: '3 months' }, label: { fr: 'Durée du stage', en: 'Internship length' } },
+        { value: { fr: 'Marathon d’Annecy', en: 'Marathon of Annecy' }, label: { fr: 'Milliers de participants', en: 'Thousands of participants' } }, 
         { value: { fr: '+15%', en: '+15%' }, label: { fr: 'Fréquentation', en: 'Traffic' } },
-        { value: { fr: '⭐', en: '⭐' }, label: { fr: 'Retours positifs', en: 'Positive feedback' } },
+
       ],
       sections: [
         {
           titleFr: 'Contexte du projet',
           titleEn: 'Project context',
-          contentFr: '<p>Dans le cadre de mon stage de fin de BUT Informatique chez <strong>Feelingjack</strong> à Beauvais, j\'ai développé une plateforme événementielle complète pour le <strong>Marathon du Lac d\'Annecy</strong>.</p><p>L\'objectif était de moderniser l\'expérience numérique des participants : inscription, résultats, parcours et informations pratiques.</p>',
+          contentFr: '<p>Dans le cadre de mon <strong>stage de fin de BUT Informatique chez FeelingJack</strong>, j’ai participé au développement d’une plateforme web pour le Marathon du Lac d’Annecy. Le projet s’inscrivait dans un contexte réel, avec des enjeux d’usage à grande échelle et une utilisation par des milliers d’utilisateurs.</p><p>L\'objectif était de moderniser l\'expérience numérique des participants : inscription, résultats, parcours et informations pratiques.</p>',
           contentEn: '<p>As part of my final internship at <strong>Feelingjack</strong> in Beauvais, I developed a full event platform for the <strong>Marathon du Lac d\'Annecy</strong>.</p><p>The goal was to modernise the digital experience for participants: registration, results, route and practical info.</p>',
         },
         {
@@ -596,20 +600,27 @@
           type: 'features',
           features: {
             fr: [
-              'Architecture monorepo avec Turborepo pour la gestion multi-packages',
-              'Développement des pages événement, programme, inscriptions et résultats',
-              'Optimisation des performances : Core Web Vitals, lazy loading, SEO',
-              'Design responsive adapté mobile, tablette et desktop',
-              'Intégration d\'une carte interactive du parcours',
-              'Déploiement continu via Vercel avec preview branches',
+              'Développement de fonctionnalités web en environnement collaboratif',
+              'Prise en charge de l’espace administrateur',
+              'Structuration des interfaces pour faciliter la gestion côté admin',
+              'Travail en full remote avec organisation autonome des tâches',
+              'Participation à un projet structuré avec plusieurs développeurs',
+              'Rédaction d’un code propre, lisible et maintenable',
+              'Utilisation de technologies modernes (Next.js, Tailwind CSS)',
+              'Contribution à l’évolution continue du projet',
+              'Collaboration via réunions régulières et outils de suivi',
             ],
+
             en: [
-              'Monorepo architecture with Turborepo for multi-package management',
-              'Development of event, programme, registration and results pages',
-              'Performance optimisation: Core Web Vitals, lazy loading, SEO',
-              'Responsive design adapted for mobile, tablet and desktop',
-              'Integration of an interactive route map',
-              'Continuous deployment via Vercel with preview branches',
+              'Development of web features in a collaborative environment',
+              'Handling of the admin area',
+              'Structuring interfaces to facilitate admin-side management',
+              'Working in full remote with autonomous task organization',
+              'Participating in a structured project with multiple developers',
+              'Writing clean, readable and maintainable code',
+              'Using modern technologies (Next.js, Tailwind CSS)',  
+              'Contribution to the continuous evolution of the project',
+              'Collaboration through regular meetings and tracking tools',
             ],
           },
         },
@@ -637,39 +648,49 @@
     streaming: {
       tag: { fr: 'Projet fin d\'étude — IUT Amiens · 09/2024 - 02/2025', en: 'Final Year Project — IUT Amiens · 09/2024 - 02/2025' },
       title: { fr: 'Plateforme de Streaming', en: 'Streaming Platform' },
-      stack: ['PHP', 'JavaScript', 'MySQL', 'HTML/CSS'],
+      stack: ['Docker', 'Nginx', 'FFmpeg', 'Netdata', 'HTML/CSS', 'React','Node.js', 'MySQL'],
       stats: [
         { value: { fr: '6 mois', en: '6 months' }, label: { fr: 'Durée du projet', en: 'Project length' } },
-        { value: { fr: '100%', en: '100%' }, label: { fr: 'Fonctionnalités', en: 'Features' } },
-        { value: { fr: '🔒', en: '🔒' }, label: { fr: 'Sécurisé', en: 'Secured' } },
+        { value: { fr: '100%', en: '100%' }, label: { fr: 'Fonctionnel', en: 'Functional' } },
+        { value: { fr: 'Déployé', en: 'Deployed' }, label: { fr: 'Sécurisé', en: 'Secure' } },
       ],
       sections: [
         {
           titleFr: 'Contexte du projet',
           titleEn: 'Project context',
-          contentFr: '<p>Projet de fin d\'études réalisé à l\'<strong>IUT d\'Amiens</strong>, consistant à concevoir et développer de A à Z une plateforme de streaming vidéo complète.</p><p>Ce projet a mobilisé l\'ensemble des compétences acquises durant le BUT Informatique : développement full-stack, BDD, sécurisation et gestion de projet.</p>',
-          contentEn: '<p>Final year project at <strong>IUT Amiens</strong>, designing and building a complete video streaming platform from scratch.</p><p>This drew on all skills from the Computer Science degree: full-stack dev, databases, security and project management.</p>',
+          contentFr: '<p>Projet de fin d\'études réalisé à l\'<strong>IUT d\'Amiens</strong>, consistant à concevoir et développer de A à Z une plateforme de streaming vidéo complète.</p><p>Ce projet a mobilisé l\'ensemble des compétences acquises durant le BUT Informatique : développement full-stack, BDD, sécurisation et gestion de projet.</p><p> <strong>Pour ma part</strong>, j’étais principalement chargé de la partie <strong>réseau, infrastructure et sécurité</strong> du projet.</p>',
+          contentEn: '<p>Final year project at <strong>IUT Amiens</strong>, involving the design and end-to-end development of a complete video streaming platform.</p><p>This project mobilised all the skills acquired during the BUT Informatique: full-stack development, databases, security and project management.</p><p><strong>For my part</strong>, I was mainly responsible for the <strong>network, infrastructure and security</strong> part of the project.</p>',
         },
         {
-          titleFr: 'Fonctionnalités développées',
-          titleEn: 'Features developed',
+          titleFr: 'Ce que j\'ai réalisé ',
+          titleEn: 'What I built',
           type: 'features',
           features: {
             fr: [
-              'Système d\'authentification sécurisé (sessions, hachage des mots de passe)',
-              'Upload et streaming de vidéos avec lecteur HTML5',
-              'Moteur de recherche et filtres par catégorie',
-              'Gestion des utilisateurs, abonnements et favoris',
+              'Analyse des vulnérabilités et des risques (Nessus, Nmap)',
+              'Mise en place de l’infrastructure avec Docker (environnements dev / production)',
+              'Orchestration et gestion des services avec Docker Swarm',
+              'Configuration serveur web avec Nginx (reverse proxy)',
+              'Sécurisation du système et durcissement des accès (blocage du root, gestion des droits sensibles)',
+              'Mise en place de pare-feu et protections réseau (iptables, PSAD)',
+              'Déploiement et configuration d’outils de sécurité (Fail2Ban puis CrowdSec, ClamAV)',
+              'Système de monitoring en temps réel avec Netdata',
+              'Automatisation et mises à jour régulières du système',
+              'Gestion et optimisation du traitement vidéo (conversion avec FFmpeg)',
               'Interface d\'administration pour la modération du contenu',
-              'Sécurisation : protection XSS, CSRF, injections SQL',
             ],
             en: [
-              'Secure authentication system (sessions, password hashing)',
-              'Video upload and streaming with HTML5 player',
-              'Search engine and category filters',
-              'User management, subscriptions and favourites',
+              'Vulnerability and risk analysis (Nessus, Nmap)',
+              'Infrastructure setup with Docker (dev/production environments)',
+              'Service orchestration and management with Docker Swarm',
+              'Web server configuration with Nginx (reverse proxy)',
+              'System hardening and access security (blocking root, managing sensitive permissions)',
+              'Implementation of firewalls and network protections (iptables, PSAD)',
+              'Deployment and configuration of security tools (Fail2Ban then CrowdSec, ClamAV)',
+              'Real-time monitoring system with Netdata',
+              'Automation and regular system updates',
+              'Video processing management and optimization (conversion with FFmpeg)',
               'Admin interface for content moderation',
-              'Security: XSS, CSRF, SQL injection protection',
             ],
           },
         },
