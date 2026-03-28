@@ -36,7 +36,6 @@
   </div>
 </header>
 
-
 <div class="mobile-nav" id="mobileNav">
   <button data-nav="hero" class="active" onclick="showPage('hero',this);closeMobile()" data-fr="Accueil" data-en="Home">Accueil</button>
   <button data-nav="about" onclick="showPage('about',this);closeMobile()" data-fr="À Propos" data-en="About">À Propos</button>
@@ -285,7 +284,7 @@
           <span class="skill-tag highlight">Ansible</span>
           <span class="skill-tag highlight" data-fr="Chiffrement (GPG, SSL/TLS)" data-en="Encryption (GPG, SSL/TLS)">Chiffrement (GPG, SSL/TLS)</span>
           <span class="skill-tag highlight">Grafana</span>
-           <span class="skill-tag highlight">Netdata</span>
+          <span class="skill-tag highlight">Netdata</span>
           <span class="skill-tag highlight">Prometheus</span>
           <span class="skill-tag highlight">VMware</span>
           <span class="skill-tag highlight">npm/yarn/pnpm</span>
@@ -358,7 +357,7 @@
           <div class="timeline-item">
             <div class="timeline-period">03/2025 – 06/2025</div>
             <div class="timeline-title" data-fr="Développeur Web React / Next.js" data-en="React / Next.js Web Developer">Développeur Web React / Next.js</div>
-            <div class="timeline-sub">Feelingjack – Beauvais <span style="color:var(--accent);font-size:0.68rem;">(Stage BUT3)</span></div>
+            <div class="timeline-sub"><span data-fr="Feelingjack – Royaume-Unis ( Distanciel )" data-en="Feelingjack – United Kingdom ( Remote )">Feelingjack – Royaume-Unis ( Distanciel )</span> <span style="color:var(--accent);font-size:0.68rem;">(Stage BUT3)</span></div>
             <div class="timeline-desc">
               <ul>
                 <li data-fr="Plateforme événementielle – Marathon du Lac d'Annecy" data-en="Event platform – Marathon du Lac d'Annecy">Plateforme événementielle – Marathon du Lac d'Annecy</li>
@@ -455,7 +454,7 @@
         <div class="project-type"><span class="project-type-dot"></span> <span data-fr="Stage BUT2 – UniLaSalle - 2024 " data-en="Internship Year 2 – UniLaSalle - 2024">Stage BUT2 – UniLaSalle - 2024</span></div>
         <div class="project-name" data-fr="Site Web Client – UniLaSalle" data-en="Client Website – UniLaSalle">Site Web Client – UniLaSalle</div>
         <div class="project-desc" data-fr="Réalisation de toutes les étapes de création d'un site web professionnel. Transformer une notion scientifique complexe en un outil simple et accessible à tous." data-en="Complete execution of all steps to build a professional website tailored to client needs. Transforming a complex scientific concept into a simple, user-friendly tool.">
-          Réalisation de toutes les étapes de création d'un site web professionnel. Transformer une notion scientifique complexe en un outil simple et accessible à tous. 
+          Réalisation de toutes les étapes de création d'un site web professionnel. Transformer une notion scientifique complexe en un outil simple et accessible à tous.
         </div>
         <div class="project-stack">
           <span class="skill-tag highlight ">HTML / CSS</span>
@@ -571,28 +570,74 @@
   </div>
 </div>
 
+<!-- ══ LIGHTBOX ══ -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lbClose">✕</button>
+  <div class="lightbox-img-wrap" id="lbImgWrap">
+    <img id="lbImg" src="" alt="">
+  </div>
+  <div class="lightbox-caption" id="lbCaption"></div>
+</div>
+
 
 <script>
   let currentLang = 'fr';
 
+  // ── Lightbox ────────────────────────────────────────────────────────────────
+  function openLightbox(src, alt) {
+    var lb = document.getElementById('lightbox');
+    document.getElementById('lbImg').src = src;
+    document.getElementById('lbCaption').textContent = alt || '';
+    lb.classList.add('open');
+  }
+
+  function closeLightbox() {
+    var lb = document.getElementById('lightbox');
+    lb.classList.remove('open');
+    document.getElementById('lbImg').src = '';
+  }
+
+  document.getElementById('lbClose').addEventListener('click', function(e) {
+    e.stopPropagation();
+    closeLightbox();
+  });
+
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this || e.target === document.getElementById('lbImgWrap')) {
+      closeLightbox();
+    }
+  });
+
+  // Echap : ferme la lightbox en priorité, sinon ferme le modal projet
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      var lb = document.getElementById('lightbox');
+      if (lb.classList.contains('open')) {
+        e.stopImmediatePropagation();
+        closeLightbox();
+      } else {
+        closeProject();
+      }
+    }
+  });
+
   // ── Données des projets ────────────────────────────────────────────────────
-  const PROJECTS = {
+  var PROJECTS = {
     marathon: {
-      tag: { fr: 'Stage BUT3 — Feelingjack · 03/2025 - 06/2025', en: 'Internship BUT3 — Feelingjack ·  03/2025 - 06/2025' },
+      tag: { fr: 'Stage BUT3 — Feelingjack · 03/2025 - 06/2025', en: 'Internship BUT3 — Feelingjack · 03/2025 - 06/2025' },
       title: { fr: "Plateforme Marathon du Lac d'Annecy", en: "Marathon du Lac d'Annecy Platform" },
       stack: ['Next.js', 'React', 'TailwindCSS', 'Turborepo', 'Vercel'],
       stats: [
         { value: { fr: '3 mois', en: '3 months' }, label: { fr: 'Durée du stage', en: 'Internship length' } },
-        { value: { fr: 'Marathon d’Annecy', en: 'Marathon of Annecy' }, label: { fr: 'Milliers de participants', en: 'Thousands of participants' } }, 
+        { value: { fr: 'Marathon d\'Annecy', en: 'Marathon of Annecy' }, label: { fr: 'Milliers de participants', en: 'Thousands of participants' } },
         { value: { fr: '+15%', en: '+15%' }, label: { fr: 'Fréquentation', en: 'Traffic' } },
-
       ],
       sections: [
         {
           titleFr: 'Contexte du projet',
           titleEn: 'Project context',
-          contentFr: '<p>Dans le cadre de mon <strong>stage de fin de BUT Informatique chez FeelingJack</strong>, j’ai participé au développement d’une plateforme web pour le Marathon du Lac d’Annecy. Le projet s’inscrivait dans un contexte réel, avec des enjeux d’usage à grande échelle et une utilisation par des milliers d’utilisateurs.</p><p>L\'objectif était de moderniser l\'expérience numérique des participants : inscription, résultats, parcours et informations pratiques.</p>',
-          contentEn: '<p>As part of my final internship at <strong>Feelingjack</strong> in Beauvais, I developed a full event platform for the <strong>Marathon du Lac d\'Annecy</strong>.</p><p>The goal was to modernise the digital experience for participants: registration, results, route and practical info.</p>',
+          contentFr: '<p>Dans le cadre de mon <strong>stage de fin de BUT Informatique chez FeelingJack</strong>, j\'ai participé au développement d\'une plateforme web pour le Marathon du Lac d\'Annecy. Le projet s\'inscrivait dans un contexte réel, avec des enjeux d\'usage à grande échelle et une utilisation par des milliers d\'utilisateurs.</p><p>L\'objectif était de moderniser l\'expérience numérique des participants : inscription, résultats, parcours et informations pratiques.</p>',
+          contentEn: '<p>As part of my final internship at <strong>Feelingjack</strong>, I developed a full event platform for the <strong>Marathon du Lac d\'Annecy</strong>.</p><p>The goal was to modernise the digital experience for participants: registration, results, route and practical info.</p>',
         },
         {
           titleFr: 'Ce que j\'ai réalisé',
@@ -601,16 +646,15 @@
           features: {
             fr: [
               'Développement de fonctionnalités web en environnement collaboratif',
-              'Prise en charge de l’espace administrateur',
+              'Prise en charge de l\'espace administrateur',
               'Structuration des interfaces pour faciliter la gestion côté admin',
               'Travail en full remote avec organisation autonome des tâches',
               'Participation à un projet structuré avec plusieurs développeurs',
-              'Rédaction d’un code propre, lisible et maintenable',
+              'Rédaction d\'un code propre, lisible et maintenable',
               'Utilisation de technologies modernes (Next.js, Tailwind CSS)',
-              'Contribution à l’évolution continue du projet',
+              'Contribution à l\'évolution continue du projet',
               'Collaboration via réunions régulières et outils de suivi',
             ],
-
             en: [
               'Development of web features in a collaborative environment',
               'Handling of the admin area',
@@ -618,7 +662,7 @@
               'Working in full remote with autonomous task organization',
               'Participating in a structured project with multiple developers',
               'Writing clean, readable and maintainable code',
-              'Using modern technologies (Next.js, Tailwind CSS)',  
+              'Using modern technologies (Next.js, Tailwind CSS)',
               'Contribution to the continuous evolution of the project',
               'Collaboration through regular meetings and tracking tools',
             ],
@@ -630,10 +674,10 @@
           type: 'gallery',
           cols: 2,
           images: [
-            { src: 'assets/images/Feelingjack/perso.png', placeholder: 'Accueil – Page principale' },
-            { src: 'assets/images/Feelingjack/Edit.png', placeholder: 'Page parcours & carte' },
-            { src: 'assets/images/Feelingjack/tiers.png', placeholder: 'Interface mobile' },
-            { src: 'assets/images/Feelingjack/acc_tiers.png', placeholder: 'Page inscriptions' },
+            { src: 'assets/images/Feelingjack/perso.png', placeholder: 'Badge Dashboard' },
+            { src: 'assets/images/Feelingjack/Edit.png', placeholder: 'Badge Editor' },
+            { src: 'assets/images/Feelingjack/tiers.png', placeholder: 'Creation tiers' },
+            { src: 'assets/images/Feelingjack/acc_tiers.png', placeholder: 'Accreditations & Tiers' },
           ],
         },
         {
@@ -648,7 +692,7 @@
     streaming: {
       tag: { fr: 'Projet fin d\'étude — IUT Amiens · 09/2024 - 02/2025', en: 'Final Year Project — IUT Amiens · 09/2024 - 02/2025' },
       title: { fr: 'Plateforme de Streaming', en: 'Streaming Platform' },
-      stack: ['Docker', 'Nginx', 'FFmpeg', 'Netdata', 'HTML/CSS', 'React','Node.js', 'MySQL'],
+      stack: ['Docker', 'Nginx', 'FFmpeg', 'Netdata', 'HTML/CSS', 'React', 'Node.js', 'MySQL'],
       stats: [
         { value: { fr: '6 mois', en: '6 months' }, label: { fr: 'Durée du projet', en: 'Project length' } },
         { value: { fr: '100%', en: '100%' }, label: { fr: 'Fonctionnel', en: 'Functional' } },
@@ -658,22 +702,22 @@
         {
           titleFr: 'Contexte du projet',
           titleEn: 'Project context',
-          contentFr: '<p>Projet de fin d\'études réalisé à l\'<strong>IUT d\'Amiens</strong>, consistant à concevoir et développer de A à Z une plateforme de streaming vidéo complète.</p><p>Ce projet a mobilisé l\'ensemble des compétences acquises durant le BUT Informatique : développement full-stack, BDD, sécurisation et gestion de projet.</p><p> <strong>Pour ma part</strong>, j’étais principalement chargé de la partie <strong>réseau, infrastructure et sécurité</strong> du projet.</p>',
+          contentFr: '<p>Projet de fin d\'études réalisé à l\'<strong>IUT d\'Amiens</strong>, consistant à concevoir et développer de A à Z une plateforme de streaming vidéo complète.</p><p>Ce projet a mobilisé l\'ensemble des compétences acquises durant le BUT Informatique : développement full-stack, BDD, sécurisation et gestion de projet.</p><p><strong>Pour ma part</strong>, j\'étais principalement chargé de la partie <strong>réseau, infrastructure et sécurité</strong> du projet.</p>',
           contentEn: '<p>Final year project at <strong>IUT Amiens</strong>, involving the design and end-to-end development of a complete video streaming platform.</p><p>This project mobilised all the skills acquired during the BUT Informatique: full-stack development, databases, security and project management.</p><p><strong>For my part</strong>, I was mainly responsible for the <strong>network, infrastructure and security</strong> part of the project.</p>',
         },
         {
-          titleFr: 'Ce que j\'ai réalisé ',
+          titleFr: 'Ce que j\'ai réalisé',
           titleEn: 'What I built',
           type: 'features',
           features: {
             fr: [
               'Analyse des vulnérabilités et des risques (Nessus, Nmap)',
-              'Mise en place de l’infrastructure avec Docker (environnements dev / production)',
+              'Mise en place de l\'infrastructure avec Docker (environnements dev / production)',
               'Orchestration et gestion des services avec Docker Swarm',
               'Configuration serveur web avec Nginx (reverse proxy)',
               'Sécurisation du système et durcissement des accès (blocage du root, gestion des droits sensibles)',
               'Mise en place de pare-feu et protections réseau (iptables, PSAD)',
-              'Déploiement et configuration d’outils de sécurité (Fail2Ban puis CrowdSec, ClamAV)',
+              'Déploiement et configuration d\'outils de sécurité (Fail2Ban puis CrowdSec, ClamAV)',
               'Système de monitoring en temps réel avec Netdata',
               'Automatisation et mises à jour régulières du système',
               'Gestion et optimisation du traitement vidéo (conversion avec FFmpeg)',
@@ -695,17 +739,26 @@
           },
         },
         {
-          titleFr: 'Galerie',
-          titleEn: 'Gallery',
+          titleFr: 'Galerie – Interfaces principales',
+          titleEn: 'Gallery – Main interfaces',
           type: 'gallery',
           cols: 2,
           images: [
             { src: 'assets/images/Streaming/accueil.png', placeholder: 'Page d\'accueil plateforme' },
             { src: 'assets/images/Streaming/Film.png', placeholder: 'Lecteur vidéo intégré' },
+          ],
+        },
+        {
+          titleFr: 'Galerie – Infrastructure & Monitoring',
+          titleEn: 'Gallery – Infrastructure & Monitoring',
+          type: 'gallery',
+          cols: 2,
+          compact: true,
+          images: [
             { src: 'assets/images/Streaming/docker_swamp.png', placeholder: 'Docker Swarm' },
             { src: 'assets/images/Streaming/docker_prod.png', placeholder: 'Docker Production' },
-            { src: 'assets/images/Streaming/ffmpeg.png', placeholder: 'FFmpeg' },
-             { src: 'assets/images/Streaming/Ffmpeg1.png', placeholder: 'FFmpeg' },
+            { src: 'assets/images/Streaming/ffmpeg.png', placeholder: 'FFmpeg optimisé' },
+            { src: 'assets/images/Streaming/Ffmpeg1.png', placeholder: 'FFmpeg hachage' },
           ],
         },
       ],
@@ -717,15 +770,15 @@
       stack: ['HTML', 'CSS', 'JavaScript'],
       stats: [
         { value: { fr: '2 mois', en: '2 months' }, label: { fr: 'Durée du stage', en: 'Internship length' } },
-        { value: { fr: 'Projet d\'envergure', en: 'Major project ' }, label: { fr: 'Collab. RMT Sol & Territoires', en: 'Collaboration with RMT Sol & Territoires' } },
+        { value: { fr: 'Projet d\'envergure', en: 'Major project' }, label: { fr: 'Collab. RMT Sol & Territoires', en: 'Collaboration with RMT Sol & Territoires' } },
         { value: { fr: 'Accessible', en: 'Accessible' }, label: { fr: 'Interface simple et intuitive', en: 'Simple and intuitive interface' } },
       ],
       sections: [
         {
           titleFr: 'Contexte du projet',
           titleEn: 'Project context',
-          contentFr: '<p>Dans le cadre de mon stage de BUT 2, j’ai contribué à la transformation d’un guide scientifique sur le <strong>Réservoir Utile Maximum (RUM)</strong> en une solution numérique permettant de simplifier son calcul. À partir d’informations techniques complexes, l’objectif était de proposer un outil accessible capable de fournir directement cette donnée aux utilisateurs selon les caractéristiques de leur sol. J’ai ainsi participé à la structuration du projet et à la conception d’une interface intuitive adaptée à un public non spécialiste.</p><p>Cette expérience m’a permis de rendre des concepts scientifiques complexes compréhensibles et utilisables par tous, et de mieux appréhender les enjeux d’un projet d’une telle envergure, notamment grâce à sa collaboration avec l’organisation RMT Sol et Territoires. Elle a également confirmé mon intérêt pour une informatique appliquée, au service de problématiques variées.</p>',
-          contentEn: '<p>As part of my BUT 2 internship, I helped transform a scientific guide on <strong> Maximum Useful Reservoir (MUR) </strong> into a digital solution designed to simplify its calculation. Starting with complex technical information, the aim was to provide an accessible tool capable of delivering this data directly to users based on the characteristics of their soil. I was therefore involved in structuring the project and designing an intuitive interface suitable for a non-specialist audience.</p><p>This experience enabled me to make complex scientific concepts understandable and usable by everyone, and to gain a better understanding of the challenges involved in a project of this scale, particularly through collaboration with the organisation RMT Sol et Territoires. It also confirmed my interest in applied computing, applied to a variety of issues.</p>',
+          contentFr: '<p>Dans le cadre de mon stage de BUT 2, j\'ai contribué à la transformation d\'un guide scientifique sur le <strong>Réservoir Utile Maximum (RUM)</strong> en une solution numérique permettant de simplifier son calcul. À partir d\'informations techniques complexes, l\'objectif était de proposer un outil accessible capable de fournir directement cette donnée aux utilisateurs selon les caractéristiques de leur sol.</p><p>Cette expérience m\'a permis de rendre des concepts scientifiques complexes compréhensibles et utilisables par tous, et de mieux appréhender les enjeux d\'un projet d\'une telle envergure, notamment grâce à sa collaboration avec l\'organisation RMT Sol et Territoires.</p>',
+          contentEn: '<p>As part of my BUT 2 internship, I helped transform a scientific guide on <strong>Maximum Useful Reservoir (MUR)</strong> into a digital solution designed to simplify its calculation. Starting with complex technical information, the aim was to provide an accessible tool capable of delivering this data directly to users based on the characteristics of their soil.</p><p>This experience enabled me to make complex scientific concepts understandable and usable by everyone, and to gain a better understanding of the challenges involved in a project of this scale, particularly through collaboration with the organisation RMT Sol et Territoires.</p>',
         },
         {
           titleFr: 'Ce que j\'ai réalisé',
@@ -733,16 +786,16 @@
           type: 'features',
           features: {
             fr: [
-              'Analyse et compréhension d’un guide scientifique complexe (RUM)',
+              'Analyse et compréhension d\'un guide scientifique complexe (RUM)',
               'Extraction et structuration des données techniques exploitables',
               'Traduction des besoins scientifiques en besoins fonctionnels',
               'Définition du parcours utilisateur et de la logique de calcul',
-              'Rédaction d’un cahier des charges détaillé',
+              'Rédaction d\'un cahier des charges détaillé',
               'Conception de maquettes (wireframes) orientées expérience utilisateur',
               'Simplification des processus pour un public non spécialiste',
               'Coordination et préparation des éléments nécessaires à la réalisation technique',
-              'Mise en place d’une vision globale du projet et de son fonctionnement',
-              'Collaboration avec différents acteurs du projet (scientifiques, encadrants, responsables RMT du projet, etc.)',
+              'Mise en place d\'une vision globale du projet et de son fonctionnement',
+              'Collaboration avec différents acteurs du projet (scientifiques, encadrants, responsables RMT, etc.)',
               'Documentation technique remise au client',
             ],
             en: [
@@ -766,18 +819,16 @@
           type: 'gallery',
           cols: 2,
           images: [
-            { src: 'assets/images/Unilasalle/rapport_rum.png', placeholder: 'Page d\'accueil plateforme' },
-            { src: 'assets/images/Unilasalle/maquette.png', placeholder: 'Lecteur vidéo intégré' },
-        
+            { src: 'assets/images/Unilasalle/rapport_rum.png', placeholder: 'Rapport RUM' },
+            { src: 'assets/images/Unilasalle/maquette.png', placeholder: 'Maquette interface' },
           ],
         },
       ],
-      
     },
   };
 
 
-  // ── Ouvrir le modal ────────────────────────────────────────────────────────
+  // ── Ouvrir le modal projet ─────────────────────────────────────────────────
   function openProject(id) {
     var proj = PROJECTS[id];
     if (!proj) return;
@@ -812,11 +863,12 @@
       if (sec.type === 'gallery') {
         var imgs = sec.images.map(function(img) {
           if (img.src) {
-            return '<div class="modal-gallery-img"><img src="' + img.src + '" alt="' + img.placeholder + '"></div>';
+            return '<div class="modal-gallery-img"><img src="' + img.src + '" alt="' + img.placeholder + '" onclick="openLightbox(this.src, this.alt)" title="Cliquer pour agrandir"></div>';
           }
           return '<div class="modal-gallery-img"><span style="font-size:1.5rem;opacity:0.25">🖼️</span><span style="font-size:0.68rem;color:var(--text-dim);text-align:center;padding:0 12px;">' + img.placeholder + '</span></div>';
         }).join('');
-        return '<div class="modal-section"><div class="modal-section-title">' + title + '</div><div class="modal-gallery cols-' + (sec.cols || 2) + '">' + imgs + '</div></div>';
+        var galleryClass = 'modal-gallery cols-' + (sec.cols || 2) + (sec.compact ? ' modal-gallery-compact' : '');
+        return '<div class="modal-section"><div class="modal-section-title">' + title + '</div><div class="' + galleryClass + '">' + imgs + '</div></div>';
       }
 
       var content = lang === 'fr' ? sec.contentFr : sec.contentEn;
@@ -835,16 +887,11 @@
     document.body.style.overflow = '';
   }
 
-  // Fermer en cliquant sur le fond
   document.getElementById('projectModal').addEventListener('click', function(e) {
     if (e.target === this) closeProject();
   });
 
-  // Fermer avec Echap
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeProject();
-  });
-
+  // ── Langue ─────────────────────────────────────────────────────────────────
   function setLang(lang) {
     currentLang = lang;
     document.querySelectorAll('.lang-btn').forEach(function(b, i) {
@@ -860,6 +907,7 @@
     document.documentElement.lang = lang;
   }
 
+  // ── Navigation ─────────────────────────────────────────────────────────────
   function showPage(pageId, btn) {
     document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
     var pg = document.getElementById('page-' + pageId);
@@ -882,7 +930,7 @@
     document.getElementById('scrollLine').style.width = Math.min(scrolled, 100) + '%';
   });
 
-  // ── Gestion du formulaire de contact ────────────────────────────────────
+  // ── Formulaire de contact ──────────────────────────────────────────────────
   document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
@@ -894,16 +942,12 @@
     submitBtn.disabled = true;
     submitBtn.textContent = currentLang === 'fr' ? 'Envoi en cours...' : 'Sending...';
 
-    // Préparer les données du formulaire
     var formData = new FormData(form);
 
-    // Envoyer avec fetch API
     fetch(form.action, {
       method: 'POST',
       body: formData,
-      headers: {
-        'Accept': 'application/json'
-      }
+      headers: { 'Accept': 'application/json' }
     })
     .then(function(response) {
       if (response.ok) {
@@ -911,12 +955,10 @@
         formMessage.style.backgroundColor = 'rgba(76, 175, 80, 0.2)';
         formMessage.style.color = '#4CAF50';
         formMessage.style.borderLeft = '4px solid #4CAF50';
-        formMessage.textContent = currentLang === 'fr' 
-          ? '✓ Message envoyé avec succès ! Merci de votre message.' 
+        formMessage.textContent = currentLang === 'fr'
+          ? '✓ Message envoyé avec succès ! Merci de votre message.'
           : '✓ Message sent successfully! Thank you for your message.';
-        
         form.reset();
-        
         setTimeout(function() {
           submitBtn.disabled = false;
           submitBtn.textContent = originalText;
@@ -926,7 +968,7 @@
         throw new Error('Erreur lors de l\'envoi');
       }
     })
-    .catch(function(error) {
+    .catch(function() {
       formMessage.style.display = 'block';
       formMessage.style.backgroundColor = 'rgba(244, 67, 54, 0.2)';
       formMessage.style.color = '#f44336';
@@ -934,16 +976,13 @@
       formMessage.textContent = currentLang === 'fr'
         ? '✗ Une erreur est survenue. Veuillez réessayer.'
         : '✗ An error occurred. Please try again.';
-      
       submitBtn.disabled = false;
       submitBtn.textContent = originalText;
-      
-      setTimeout(function() {
-        formMessage.style.display = 'none';
-      }, 5000);
+      setTimeout(function() { formMessage.style.display = 'none'; }, 5000);
     });
   });
 
+  // Init
   setLang('fr');
 </script>
 </body>
