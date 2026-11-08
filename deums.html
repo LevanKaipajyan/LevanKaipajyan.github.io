@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deums – Levan Kaipajyan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/deums.css?v=3">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="index.html">LK<span>.</span></a>
+    <div class="nav-right">
+      <a class="btn-ghost" href="index.html" style="padding:8px 16px;font-size:0.72rem;">← Retour au portfolio</a>
+    </div>
+  </div>
+</header>
+
+<!-- ══ CODE D'ACCÈS ══ -->
+<div class="deums-gate open" id="deumsGate">
+  <div class="deums-gate-box" id="deumsGateBox">
+    <div class="deums-gate-icon">🔒</div>
+    <div class="deums-gate-title">Accès privé</div>
+    <p class="deums-gate-sub">Entre le code pour accéder à cette page.</p>
+    <input type="text" id="deumsCode" class="form-control deums-gate-input" placeholder="JJ/MM/AAAA" inputmode="numeric" autocomplete="off">
+    <div class="deums-gate-error" id="deumsGateError"></div>
+    <div class="deums-gate-actions">
+      <button class="form-submit" onclick="submitDeumsCode()">Valider</button>
+      <a class="deums-gate-cancel" href="index.html">Retour</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══ CONTENU (caché tant que le code n'est pas bon) ══ -->
+<main id="deumsApp" style="display:none;">
+<div class="page active" id="page-deums">
+<section>
+  <div class="wrapper">
+    <div class="section-header">
+      <span class="section-num">❤️</span>
+      <h2 class="section-title">Мое сокровище</h2>
+      <span class="section-num">❤️</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div id="deumsForm">
+      <p class="deums-intro">Coche chaque règle que tu acceptes bb coeur, puis signe à la fin pour accepter le contrat et devenir ma femme.</p>
+      <p class="deums-sub"><strong>I. Les principes fondamentaux</strong> — Ces principes sont les bases de notre relation. Ils doivent être respectés par les deux personnes, quelles que soient les circonstances.</p>
+
+      <!-- 1 -->
+      <div class="deums-block">
+        <div class="deums-block-title">1. La communication avant tout</div>
+        <div class="deums-list">
+          <label class="deums-rule"><input type="checkbox"><span class="deums-check">✓</span><span>Lors de chaque dispute, prendre le temps de discuter afin de comprendre le problème et de trouver une solution.</span></label>
+          <label class="deums-rule"><input type="checkbox"><span class="deums-check">✓</span><span>Ne jamais laisser un problème s'installer ou s'accumuler. Il faut en parler plutôt que de se braquer ou de faire la tête.</span></label>
+          <label class="deums-rule"><input type="checkbox"><span class="deums-check">✓</span><span>Essayer de comprendre les attentes et les besoins de l'autre, et faire des efforts pour y répondre en comprenant pourquoi cela est important pour lui.</span></label>
+          <label class="deums-rule"><input type="checkbox"><span class="deums-check">✓</span><span>Ne jamais cacher un problème par peur de la réaction de l'autre.</span></label>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="deums-block">
+        <div class="deums-block-title">2. Le respect avant tout</div>
+        <div class="deums-list">
+          <label class="deums-rule"><input type="checkbox"><span class="deums-check">✓</span><span>Le respect doit rester une priorité, même lors des disputes.</span></label>
+          <label class="deums-rule"><input type="checkbox"><span class="deums-check">✓</span><span>Ne jamais chercher à blesser, rabaisser ou humilier l'autre volontairement.</span></label>
+          <label class="deums-rule"><input type="checkbox"><span class="deums-check">✓</span><span>Ne jamais minimiser les sentiments de son partenaire.</span></label>
+          <label class="deums-rule"><input type="checkbox"><span class="deums-check">✓</span><span>Ne jamais se moquer de ses peurs, de ses insécurités.</span></label>
+          <label class="deums-rule"><input type="checkbox"><span class="deums-check">✓</span><span>Ne jamais chercher volontairement à énerver l'autre.</span></label>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="deums-block">
+        <div class="deums-block-title">3. La fidélité et la confiance</div>
+        <div class="deums-list">
+          <label class="deums-rule"><input type="checkbox"><span class="deums-check">✓</span><span>La fidélité est la règle numéro un. Elle est indispensable et ne devrait même pas avoir besoin d'être rappelée.</span></label>
+          <label class="deums-rule"><input type="checkbox"><span class="deums-check">✓</span><span>Aucune ambiguïté avec une personne extérieure au couple.</span></label>
+          <label class="deums-rule"><input type="checkbox"><span class="deums-check">✓</span><span>Ne jamais laisser quelqu'un manquer de respect à son couple ou dénigrer son partenaire.</span></label>
+          <label class="deums-rule"><input type="checkbox"><span class="deums-check">✓</span><span>Le mensonge est strictement interdit, même lorsqu'il concerne de petites choses. La confiance ne doit jamais être mise en jeu.</span></label>
+          <label class="deums-rule"><input type="checkbox"><span class="deums-check">✓</span><span>Ne jamais cacher volontairement des choses importantes à l'autre.</span></label>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="deums-block">
+        <div class="deums-block-title">4. La solidarité du couple</div>
+        <div class="deums-list">
+          <label class="deums-rule"><input type="checkbox"><span class="deums-check">✓</span><span>Ne jamais dénigrer son partenaire devant les autres.</span></label>
+          <label class="deums-rule"><input type="checkbox"><span class="deums-check">✓</span><span>Toujours parler positivement de l'autre auprès des personnes extérieures au couple.</span></label>
+          <label class="deums-rule"><input type="checkbox"><span class="deums-check">✓</span><span>Ne jamais laisser les personnes extérieures s'immiscer dans nos disputes ou chercher à nous séparer.</span></label>
+          <label class="deums-rule"><input type="checkbox"><span class="deums-check">✓</span><span>Nos problèmes de couple doivent rester privés.</span></label>
+          <label class="deums-rule"><input type="checkbox"><span class="deums-check">✓</span><span>Ne jamais chercher à faire passer l'autre pour le méchant ou le responsable de tous les problèmes.</span></label>
+          <label class="deums-rule"><input type="checkbox"><span class="deums-check">✓</span><span>Se soutenir mutuellement devant les gens, même lorsque nous ne sommes pas d'accord, devant les gens nous devons être d'accord sur tout.</span></label>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="deums-block">
+        <div class="deums-block-title">5. La remise en question</div>
+        <div class="deums-list">
+          <label class="deums-rule"><input type="checkbox"><span class="deums-check">✓</span><span>Chacun doit être capable de reconnaître ses torts et de s'excuser et être tout mignon lorsqu'il a fait une erreur.</span></label>
+          <label class="deums-rule"><input type="checkbox"><span class="deums-check">✓</span><span>Ne jamais retourner une situation pour faire porter toute la responsabilité à l'autre.</span></label>
+          <label class="deums-rule"><input type="checkbox"><span class="deums-check">✓</span><span>Ne pas chercher à gagner une dispute, mais à résoudre le problème.</span></label>
+          <label class="deums-rule"><input type="checkbox"><span class="deums-check">✓</span><span>Faire tous les deux des efforts pour arranger les choses et retrouver une bonne entente.</span></label>
+          <label class="deums-rule"><input type="checkbox"><span class="deums-check">✓</span><span>Ne jamais menacer de quitter l'autre sous le coup de la colère.</span></label>
+          <label class="deums-rule"><input type="checkbox"><span class="deums-check">✓</span><span>Ne jamais laisser une dispute se terminer dans l'indifférence : toujours prendre le temps de faire la paix avant de dormir.</span></label>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="deums-block">
+        <div class="deums-block-title">6. La transparence</div>
+        <div class="deums-list">
+          <label class="deums-rule"><input type="checkbox"><span class="deums-check">✓</span><span>Si l'un souhaite connaître certains éléments du passé de l'autre, prendre le temps de lui raconter les choses honnêtement et avec les détails nécessaires pour le rassurer, dans le respect des limites de chacun.</span></label>
+          <label class="deums-rule"><input type="checkbox"><span class="deums-check">✓</span><span>Ne jamais cacher un élément important qui pourrait avoir des conséquences sur notre relation.</span></label>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="deums-block">
+        <div class="deums-block-title">7. Le quotidien et les habitudes</div>
+        <div class="deums-list">
+          <label class="deums-rule"><input type="checkbox"><span class="deums-check">✓</span><span>Les tenues vestimentaires doivent respecter les limites et les attentes définies ensemble.</span></label>
+          <label class="deums-rule"><input type="checkbox"><span class="deums-check">✓</span><span>Les sorties doivent être discutées et organisées dans le respect de chacun.</span></label>
+          <label class="deums-rule"><input type="checkbox"><span class="deums-check">✓</span><span>Prévenir ou consulter l'autre avant de prendre certaines décisions susceptibles de l'énerver, de l'inquiéter ou de l'intéresser.</span></label>
+          <label class="deums-rule"><input type="checkbox"><span class="deums-check">✓</span><span>Partager des photos et des vidéos des moments importants de sa journée pour garder une certaine proximité.</span></label>
+          <label class="deums-rule"><input type="checkbox"><span class="deums-check">✓</span><span>La préparation des repas doit faire partie des responsabilités du quotidien ( priorité +++).</span></label>
+          <label class="deums-rule"><input type="checkbox"><span class="deums-check">✓</span><span>Apprendre à cuisiner et faire l'effort de préparer de bons petits plats.</span></label>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="deums-block">
+        <div class="deums-block-title">8. La vie intime</div>
+        <div class="deums-list">
+          <label class="deums-rule"><input type="checkbox"><span class="deums-check">✓</span><span>Faire des efforts mutuels concernant notre vie sexuelle afin de l'améliorer.</span></label>
+          <label class="deums-rule"><input type="checkbox"><span class="deums-check">✓</span><span>Être à l'écoute des envies, des besoins et des attentes de chacun.</span></label>
+          <label class="deums-rule"><input type="checkbox"><span class="deums-check">✓</span><span>Ne jamais considérer les besoins de l'autre comme acquis ou secondaires.</span></label>
+        </div>
+      </div>
+
+      <!-- 9 -->
+      <div class="deums-block">
+        <div class="deums-block-title">9. Les projets et la prise d'initiative</div>
+        <div class="deums-list">
+          <label class="deums-rule"><input type="checkbox"><span class="deums-check">✓</span><span>Faire davantage de choix et prendre plus d'initiatives dans la vie quotidienne.</span></label>
+          <label class="deums-rule"><input type="checkbox"><span class="deums-check">✓</span><span>Se bouger davantage concernant les projets communs et personnels.</span></label>
+          <label class="deums-rule"><input type="checkbox"><span class="deums-check">✓</span><span>Prendre des décisions concrètes, notamment pour l'aménagement du logement, l'achat de meubles et l'organisation de notre vie.</span></label>
+          <label class="deums-rule"><input type="checkbox"><span class="deums-check">✓</span><span>Ne pas toujours attendre que l'autre prenne les décisions ou fasse les démarches.</span></label>
+          <label class="deums-rule"><input type="checkbox"><span class="deums-check">✓</span><span>Montrer davantage d'implication dans la construction de notre avenir à deux.</span></label>
+        </div>
+      </div>
+
+      <div class="deums-block">
+        <div class="deums-block-title">Signature</div>
+        <p class="deums-progress">Règles acceptées : <strong id="deumsCount">0 / 0</strong></p>
+        <div class="deums-sign-label">Signe ici laaaa</div>
+        <div class="deums-canvas-wrap">
+          <canvas id="deumsCanvas"></canvas>
+          <div class="deums-canvas-hint" id="deumsHint">✍️ Signe avant que je t'encule</div>
+        </div>
+        <div class="deums-sign-actions">
+          <button class="form-submit" id="deumsSignBtn" onclick="signDeums()" disabled>Signer le contrat →</button>
+          <button class="deums-clear deums-all" onclick="checkAllDeums()">✓ Tout cocher</button>
+          <button class="deums-clear" onclick="clearDeumsSignature()">Effacer</button>
+          <span class="deums-sign-status" id="deumsSignStatus"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="deums-success" id="deumsSuccess">
+      <div class="deums-success-icon">💍</div>
+      <p class="deums-success-text">Félicitations <span>Maud Caignard</span> vous avez accepté les conditions de couple de <span>Levan Kaipajyan</span> vous pouvez à présent être le сокровище de sa vie</p>
+      <div class="deums-success-sign"><img id="deumsSuccessImg" alt="Signature"></div>
+      <div class="deums-success-date" id="deumsSuccessDate"></div>
+    </div>
+  </div>
+</section>
+</div>
+</main>
+<script src="assets/jss/deums.js?v=3"></script>
+</body>
+</html>
