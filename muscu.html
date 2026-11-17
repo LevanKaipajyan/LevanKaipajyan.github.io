@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LK Performance – Trouve ton programme</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/muscu.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="index.html">LK<span>.</span><small>Performance</small></a>
+    <div class="nav-right">
+      <a class="btn-ghost btn-sm" href="index.html">← Portfolio</a>
+      <button class="btn-ghost btn-sm" id="restartBtn" type="button" hidden>↺ Recommencer</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section>
+  <div class="wrapper">
+
+    <div class="app-title">
+      <span class="section-num">💪</span>
+      <h1 class="section-title">Trouve ton programme</h1>
+      <div class="section-line"></div>
+    </div>
+
+    <!-- Barre de progression -->
+    <div class="stepper" id="stepper" aria-label="Progression">
+      <div class="stepper-line"><span id="stepFill"></span></div>
+      <ol class="stepper-dots">
+        <li data-dot="1"><span>1</span><em>Profil</em></li>
+        <li data-dot="2"><span>2</span><em>Fréquence</em></li>
+        <li data-dot="3"><span>3</span><em>Répartition</em></li>
+        <li data-dot="4"><span>✓</span><em>Programme</em></li>
+      </ol>
+    </div>
+
+    <!-- ÉTAPE 1 : genre -->
+    <div class="step active" id="step-1">
+      <h2 class="step-question">Tu es…</h2>
+      <p class="step-help">On adaptera la suite de l'expérience à ton profil.</p>
+      <div class="choice-grid two">
+        <button class="choice" type="button" data-gender="homme">
+          <span class="choice-title">Un homme</span>
+        </button>
+        <button class="choice" type="button" data-gender="femme">
+          <span class="choice-title">Une femme</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ÉTAPE 2 : nombre de séances -->
+    <div class="step" id="step-2">
+      <h2 class="step-question">Combien de séances par semaine ?</h2>
+      <p class="step-help">Choisis un nombre réaliste, celui que tu peux tenir toute l'année.</p>
+      <div class="choice-grid six" id="totalGrid"></div>
+      <button class="back-link" type="button" data-back="1">← Retour</button>
+    </div>
+
+    <!-- ÉTAPE 3 : répartition haut / bas -->
+    <div class="step" id="step-3">
+      <h2 class="step-question">Comment les répartir ?</h2>
+      <p class="step-help" id="splitHelp"></p>
+      <div class="split-label">Séances <strong>haut du corps</strong></div>
+      <div class="choice-grid six" id="upperGrid"></div>
+      <div class="split-recap">
+        <div class="split-box upper"><span id="upperVal">–</span><em>haut du corps</em></div>
+        <div class="split-plus">+</div>
+        <div class="split-box lower"><span id="lowerVal">–</span><em>bas du corps</em></div>
+      </div>
+      <div class="step-actions">
+        <button class="back-link" type="button" data-back="2">← Retour</button>
+        <button class="btn-primary" id="seeProgramBtn" type="button" disabled>Voir mes programmes →</button>
+      </div>
+    </div>
+
+    <!-- RÉSULTAT -->
+    <div class="step" id="step-4">
+      <div class="recap" id="recap"></div>
+      <div id="banner"></div>
+      <h2 class="step-question result-title" id="resultTitle">Tes programmes</h2>
+      <div id="proposals" class="proposals"></div>
+      <details class="legend">
+        <summary><span>📖 Comment lire et suivre ton programme</span><span class="chev">▾</span></summary>
+        <div class="legend-body" id="legendBody"></div>
+      </details>
+      <button class="back-link" type="button" data-back="3">← Modifier mes choix</button>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-text"><span>LK Performance</span></div>
+    <div class="footer-text">Repères généraux, à adapter à ton niveau.</div>
+  </div>
+</footer>
+
+<script src="assets/jss/jspdf.umd.min.js"></script>
+<script src="assets/jss/muscu-pdf.js"></script>
+<script src="assets/jss/muscu.js"></script>
+</body>
+</html>
