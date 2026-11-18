@@ -4,10 +4,10 @@
   'use strict';
 
   var C = {
-    navy: [10, 10, 15], white: [255, 255, 255], cyan: [0, 212, 255], violet: [124, 58, 237],
+    navy: [17, 24, 32], white: [255, 255, 255], cyan: [0, 212, 255], violet: [8, 145, 178],
     text: [30, 41, 59], muted: [100, 116, 139], line: [226, 232, 240], zebra: [248, 250, 252],
-    upper: [8, 145, 178], upperTint: [224, 247, 252],
-    lower: [109, 40, 217], lowerTint: [241, 236, 254],
+    upper: [8, 145, 178], upperTint: [224, 247, 252], upperTx: [56, 205, 235],
+    lower: [49, 90, 125], lowerTint: [225, 233, 241 ],lowerTx: [35, 85, 120], 
     amber: [146, 64, 14], amberTint: [254, 243, 199], amberLine: [245, 158, 11],
     green: [4, 120, 87], greenTint: [209, 250, 229],
     grey: [71, 85, 105], greyTint: [226, 232, 240]
@@ -53,8 +53,7 @@
     var doc = new JS({ unit: 'mm', format: 'a4', compress: true });
     var W = 210, H = 297, M = 15, CW = W - 2 * M, BOTTOM = H - 18;
     var y = 0;
-    var zoneCol = { upper: [C.upper, C.upperTint], lower: [C.lower, C.lowerTint] };
-
+    var zoneCol = { upper: [C.upper, C.upperTint, C.upperTx], lower: [C.lower, C.lowerTint, C.lowerTx] };
     /* ── outils ── */
     function fill(c) { doc.setFillColor(c[0], c[1], c[2]); }
     function draw(c) { doc.setDrawColor(c[0], c[1], c[2]); }
@@ -272,7 +271,7 @@
       fill(C.zebra); doc.rect(M, y, CW, h - 9, 'F');
       var yy = y + 3;
       laid.forEach(function (l) {
-        fill(C.cyan); doc.circle(M + 5, yy + 1.9, 0.8, 'F');
+        fill(C.navy); doc.circle(M + 5, yy + 1.9, 0.8, 'F');
         yy = paint([l.t], M + 8.5, yy, 8.5, 'bold', C.text);
         yy = paint(l.lines, M + 8.5, yy, 8, 'normal', C.muted) + 2.6;
       });
@@ -291,7 +290,6 @@
       doc.text('CONSEILS POUR UN DÉBUTANT', M + 4.5, y + 6);
       y += 9;
       fill(C.upperTint); doc.rect(M, y, CW, h - 9, 'F');
-      fill(C.upper); doc.rect(M, y, 1.3, h - 9, 'F');
       var yy = y + 3.2;
       tl.forEach(function (l) {
         fill(C.upper); doc.circle(M + 6, yy + 1.7, 0.8, 'F');
