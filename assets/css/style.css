@@ -1337,7 +1337,7 @@ footer {
   left: 50%;
   transform: translateX(-50%);
   font-size: 0.72rem;
-  color: var(--text-dim);
+  color: #ffffff;
   letter-spacing: 0.08em;
   text-align: center;
   pointer-events: none;

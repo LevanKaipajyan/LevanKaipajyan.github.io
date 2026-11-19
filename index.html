@@ -81,7 +81,7 @@
         <div class="hero-stats">
           <div class="stat-item">
             <div class="stat-value">🎂</div>
-            <div class="stat-label" data-fr="21 ans" data-en="21 years old">21 ans</div>
+            <div class="stat-label" data-fr="22 ans" data-en="22 years old">22 ans</div>
           </div>
           <div class="stat-item">
             <div class="stat-value">📍</div>
@@ -165,6 +165,7 @@
             <span class="tag">🚗 <span data-fr="Automobile" data-en="Automotive">Automobile</span></span>
             <span class="tag">✈️ <span data-fr="Voyages" data-en="Travels">Voyages</span></span>
             <span class="tag">🎬 <span data-fr="Création vidéo" data-en="Video creation">Création vidéo</span></span>
+            <a class="tag tag-deums" href="deums.html">💕 Deums</a>
 
           </div>
         </div>
@@ -423,6 +424,20 @@
     </div>
     <div class="projects-grid">
 
+      <div class="project-card" onclick="openProject('muscu')">
+        <div class="project-type"><span class="project-type-dot"></span> <span data-fr="Projet personnel – 2026" data-en="Personal project – 2026">Projet personnel – 2026</span></div>
+        <div class="project-name" data-fr="Site de Musculation" data-en="Weightlifting Website">Site de Musculation</div>
+        <div class="project-desc" data-fr="Développement d'un site de musculation gratuit qui guide débutants et avancés vers un programme adapté à leur fréquence d'entraînement et à plusieurs autres critères, avec export PDF." data-en="Development of a free weightlifting website that guides beginners and advanced lifters to a program tailored to their training frequency and other criteria, with PDF export.">
+          Développement d'un site de musculation gratuit qui guide débutants et avancés vers un programme adapté à leur fréquence d'entraînement et à plusieurs autres critères, avec export PDF.
+        </div>
+        <div class="project-stack">
+          <span class="skill-tag highlight">HTML / CSS</span>
+          <span class="skill-tag highlight">JavaScript</span>
+          <span class="skill-tag">jsPDF</span>
+        </div>
+        <div class="project-cta" data-fr="Voir le détail →" data-en="View details →">Voir le détail →</div>
+      </div>
+
       <div class="project-card" onclick="openProject('marathon')">
         <div class="project-type"> <span data-fr="Stage BUT3 – Feelingjack - 2025" data-en="Internship BUT3 – Feelingjack - 2025">Stage BUT3 – Feelingjack - 2025</span></div>
         <div class="project-name" data-fr="Plateforme Marathon du Lac d'Annecy" data-en="Marathon du Lac d'Annecy Platform">Plateforme Marathon du Lac d'Annecy</div>
@@ -625,6 +640,77 @@
 
   // ── Données des projets ────────────────────────────────────────────────────
   var PROJECTS = {
+    muscu: {
+      tag: { fr: 'Projet personnel — Site de Musculation · 11/2026', en: 'Personal project — Weightlifting Website · 11/2026' },
+      title: { fr: 'Site de Musculation', en: 'Weightlifting Website' },
+      stack: ['HTML', 'CSS', 'JavaScript', 'jsPDF'],
+      stats: [
+        { value: { fr: 'Gratuit', en: 'Free' }, label: { fr: 'Accès libre pour tous', en: 'Open to everyone' } },
+        { value: { fr: 'Sur mesure', en: 'Custom-made' }, label: { fr: 'Programme personnalisé', en: 'Personalized program' } },
+        { value: { fr: 'Basé sur la recherche', en: 'Research-based' }, label: { fr: 'Études, expérience et retours de pratiquants', en:'Studies, experience and user feedback' } },      ],
+      sections: [
+        {
+          titleFr: 'Contexte du projet',
+          titleEn: 'Project context',
+          contentFr: '<p>J\'ai développé un <strong>site de musculation gratuit</strong> pour guider les <strong>débutants comme les plus avancés</strong> vers un programme adapté à leur <strong>fréquence d\'entraînement</strong> et à de nombreux autres facteurs.</p><p>Ce projet est né d\'un besoin concret : je recevais régulièrement des demandes de conseils de programme, de la part de proches comme de personnes que je ne connaissais pas, et je devais à chaque fois <strong>refaire un PDF</strong> pour le leur envoyer. Ce site me fait gagner du temps et leur donne un programme clair en quelques clics.</p><p>C\'était aussi pour moi l\'occasion d\'<strong>augmenter mon expérience en informatique</strong>, d\'allier ma passion et mon travail, et de ne pas perdre la main pendant mes périodes d\'inactivité.</p>',
+          contentEn: '<p>I built a <strong>free weightlifting website</strong> to guide <strong>beginners and advanced lifters</strong> to a program that fits their <strong>training frequency</strong> and many other factors.</p><p>The project came from a real need: I regularly received requests for training advice, from friends and strangers alike, and each time I had to <strong>rebuild a PDF</strong> to send them. This site saves me time and gives them a clear program in a few clicks.</p><p>It was also a chance for me to <strong>grow my IT experience</strong>, combine passion and work, and keep my skills sharp during downtime.</p>',
+        },
+        {
+          titleFr: 'Ce que permet le site',
+          titleEn: 'What the site offers',
+          type: 'features',
+          features: {
+            fr: [
+              'Parcours personnalisé en quelques étapes : profil, fréquence d\'entraînement et répartition des séances',
+              'Toutes les possibilités à portée de main : une option « Je ne sais pas » permet d\'explorer les différentes organisations possibles.',
+              'Programmes sélectionnés selon leur pertinence, avec la recommandation la plus adaptée mise en avant.',
+              'Conseils et recommandations personnalisés : récupération musculaire, équilibre des séances et fréquence d\'entraînement.',
+              'Séances détaillées et structurées avec séries, répétitions, temps de repos, conseils d\'exécution et durée estimée.',
+              'Planning hebdomadaire sur 7 jours : visualisation des séances et des jours de récupération.',
+              'Téléchargement du programme en PDF pour le conserver et le consulter facilement.', 
+            ],
+            en: [
+              'Personalized journey in a few steps: profile, training frequency and workout distribution',
+              'All possibilities at your fingertips: a "I don\'t know" option lets you explore different possible workout splits.',
+              'Programs selected based on their relevance, with the most suitable recommendation highlighted.',
+              'Personalized advice and recommendations: muscle recovery, workout balance and training frequency.',
+              'Detailed and structured workouts including sets, reps, rest periods, execution tips and estimated duration.',
+              '7-day weekly schedule: a clear overview of workouts and recovery days.',
+              'Downloadable PDF program to save and consult whenever you need.',
+            ],
+          },
+        },
+        {
+          titleFr: 'Remarque',
+          titleEn: 'Note',
+          contentFr: '<p>Les programmes proposés sont le fruit d\'un travail de recherche et de synthèse, combinant mon expérience personnelle de la musculation, l\'analyse d\'études scientifiques, les connaissances disponibles sur Internet ainsi que de nombreux retours d\'expérience de pratiquants, notamment recueillis sur les réseaux sociaux.</p><p>L\'objectif est de proposer des organisations d\'entraînement cohérentes, réfléchies et adaptées aux différents profils, en s\'appuyant autant que possible sur les connaissances actuelles en matière de développement musculaire et de récupération.</p>',
+          contentEn: '<p>The programs offered are the result of research and synthesis, combining my personal weightlifting experience, analysis of scientific studies, knowledge available online, and numerous user feedback, particularly gathered from social media.</p><p>The goal is to provide coherent, well-thought-out training structures that are suitable for different profiles, relying as much as possible on current knowledge regarding muscle development and recovery.</p>',
+        },
+        {
+          titleFr: 'Galerie',
+          titleEn: 'Gallery',
+          type: 'gallery',
+          cols: 2,
+          images: [
+            { src: 'assets/images/LKPerformance/Profil.png', placeholder: 'Choix du profil' },
+            { src: 'assets/images/LKPerformance/NBseance.png', placeholder: 'Choix du nombre de séances' },
+            { src: 'assets/images/LKPerformance/NBseancehaut.png', placeholder: 'Choix du nombre de séances (haut)' },
+            { src: 'assets/images/LKPerformance/Programme.png', placeholder: 'Programmes et semaine proposés' },
+            { src: 'assets/images/LKPerformance/Programme2.png', placeholder: 'Programmes classés par ordre de priorité ' },
+            { src: 'assets/images/LKPerformance/Programme3.png', placeholder: 'Programmes détaillés ' },
+            { src: 'assets/images/LKPerformance/PDF_recto.png', placeholder: ' PDF recto' },
+            { src: 'assets/images/LKPerformance/PDF_verso.png', placeholder: ' PDF verso' },
+          ],
+        },
+          {
+            titleFr: 'Essayer le site',
+            titleEn: 'Try the site',
+            contentFr: '<div style="display:flex;gap:12px;flex-wrap:wrap;"><a href="muscu.html" class="btn-primary">Ouvrir le site de musculation →</a><a href="assets/documents/LK-Performance_Homme_Upper-Lower-Upper-Lower.pdf" target="_blank" class="btn-ghost">📄 Ouvrir un PDF exemple</a></div>',
+            contentEn: '<div style="display:flex;gap:12px;flex-wrap:wrap;"><a href="muscu.html" class="btn-primary">Open the weightlifting site →</a><a href="assets/documents/LK-Performance_Homme_Upper-Lower-Upper-Lower.pdf" target="_blank" class="btn-ghost">📄 Open a sample PDF</a></div>',
+          },
+      ],
+    },
+
     marathon: {
       tag: { fr: 'Stage BUT3 — Feelingjack · 03/2025 - 06/2025', en: 'Internship BUT3 — Feelingjack · 03/2025 - 06/2025' },
       title: { fr: "Plateforme Marathon du Lac d'Annecy", en: "Marathon du Lac d'Annecy Platform" },
